@@ -1,10 +1,8 @@
-
-
-
+import Banner from "@/components/Banner";
 export default function HomePage() {
   return (
-    <div className="p-8">
-   
+    <div className=" ">
+      <Banner/>
     </div>
   );
 }
