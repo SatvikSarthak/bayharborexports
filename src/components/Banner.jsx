@@ -3,7 +3,7 @@ export default function Banner() {
     <div className="relative w-full h-[800px] ">
       {/* Background Video */}
       <video
-        src="/Cargo_Ship_Port_Time_Lapse.mp4"
+        src="/cargo_time_lapse.mp4"
         autoPlay
         loop
         muted
