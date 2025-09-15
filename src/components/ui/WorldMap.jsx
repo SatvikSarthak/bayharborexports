@@ -62,8 +62,11 @@ export default function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
                   pathLength: 1,
                 }}
                 transition={{
-                  duration: 1,
+                  duration: 2,
                   delay: 0.5 * i,
+                  repeat: Infinity,
+                  repeatDelay:5,
+                  repeatType: "loop",
                   ease: "easeOut",
                 }}
                 key={`start-upper-${i}`}
