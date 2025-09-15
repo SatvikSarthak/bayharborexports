@@ -9,7 +9,7 @@ export default function Navbar() {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <nav className="w-full flex fixed items-center justify-between px-6 py-2 bg-white shadow-sm z-20">
-      <div className="flex w-[200px] flex-shrink-0 h-[60px] items-center">
+      <div className="flex w-[300px] flex-shrink-0 h-[80px] items-center">
         <Link href="/">
           <Image src={Logo} className="" alt="logo" />
         </Link>

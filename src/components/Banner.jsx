@@ -1,7 +1,11 @@
+import { Suspense } from "react";
+
 export default function Banner() {
   return (
+    
     <div className="relative w-full h-[800px] ">
       {/* Background Video */}
+
       <video
         src="/cargo_time_lapse.mp4"
         autoPlay
@@ -16,9 +20,7 @@ export default function Banner() {
         <h1 className="text-white text-5xl font-bold drop-shadow-lg">
           BayHarbor Exports
         </h1>
-        <p className="text-gray-200 mt-4 text-lg">
-          Reliable. Fast. Worldwide.
-        </p>
+        <p className="text-gray-200 mt-4 text-lg">Reliable. Fast. Worldwide.</p>
       </div>
     </div>
   );

@@ -2,17 +2,17 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import  arrow1  from "/public/arrow1.png";
+import arrow1 from "/public/arrow1.png";
 
 export default function AboutSection() {
-  const [activeIndex, setActiveIndex] = useState(0); // Default open is "Eco-Friendly"
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const handleToggle = (index) => {
     setActiveIndex(index === activeIndex ? null : index);
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16">
+    <section className="max-w-7xl mx-auto px-24 py-16">
       {/* Header */}
       <div className="text-center mb-12">
         <h2 className="text-sm uppercase tracking-widest text-gray-500">
@@ -27,9 +27,7 @@ export default function AboutSection() {
         </p>
       </div>
 
-      {/* Content */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-        {/* Left - Collapsible Text */}
         <div className="space-y-6">
           {[
             {
