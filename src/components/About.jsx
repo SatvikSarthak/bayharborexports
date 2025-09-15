@@ -18,7 +18,7 @@ export default function AboutSection() {
         <h2 className="text-sm uppercase tracking-widest text-gray-500">
           About Us
         </h2>
-        <h1 className="text-4xl font-bold mt-2">Who We Are</h1>
+        <h1 className="text-4xl text-[#0a4174] font-bold mt-2">Who We Are</h1>
         <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
           Our logistics company is dedicated to redefining the way goods move
           across the world. Our global network, coupled with experienced
