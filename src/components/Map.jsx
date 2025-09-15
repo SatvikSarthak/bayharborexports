@@ -15,7 +15,8 @@ export function WorldMapDemo() {
                 initial={{ x: -10, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: idx * 0.04 }}>
-                {word}
+                  {word === " " ? "\u00A0" : word} 
+
               </motion.span>
             ))}
           </span>
