@@ -1,6 +1,7 @@
 "use client";
 import { useRef } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
+
 import DottedMap from "dotted-map";
 
 import { useTheme } from "next-themes";
@@ -65,7 +66,7 @@ export default function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
                   duration: 2,
                   delay: 0.5 * i,
                   repeat: Infinity,
-                  repeatDelay:5,
+                  repeatDelay: 5,
                   repeatType: "loop",
                   ease: "easeOut",
                 }}

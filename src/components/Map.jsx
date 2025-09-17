@@ -1,6 +1,6 @@
-"use client";
+"use client"
 import WorldMap from "@/components/ui/WorldMap";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 export function WorldMapDemo() {
   return (
@@ -14,15 +14,16 @@ export function WorldMapDemo() {
                 className="inline-block"
                 initial={{ x: -10, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: idx * 0.04 }}>
-                  {word === " " ? "\u00A0" : word} 
-
+                transition={{ duration: 0.5, delay: idx * 0.04 }}
+              >
+                {word === " " ? "\u00A0" : word}
               </motion.span>
             ))}
           </span>
         </p>
         <p className="text-sm md:text-lg text-neutral-500 max-w-2xl mx-auto py-4">
-          Connecting businesses and people worldwide — no matter where you are, we deliver with precision and care.
+          Connecting businesses and people worldwide — no matter where you are,
+          we deliver with precision and care.
         </p>
       </div>
       <WorldMap
@@ -57,7 +58,8 @@ export function WorldMapDemo() {
             start: { lat: 28.6139, lng: 77.209 }, // New Delhi
             end: { lat: -1.2921, lng: 36.8219 }, // Nairobi
           },
-        ]} />
+        ]}
+      />
     </div>
   );
 }
