@@ -86,7 +86,7 @@ export default function AboutSection() {
         </div>
 
         {/* Right - Image */}
-        <div className="relative rounded-lg overflow-hidden">
+        <div className="relative  flex rounded-lg overflow-hidden">
           {/* <Image
             src="/images/packing.jpg" // Place your image inside public/images folder
             alt="Packing"
@@ -94,6 +94,7 @@ export default function AboutSection() {
             height={500}
             className="w-full h-auto object-cover rounded-lg shadow-md"
           /> */}
+          <p className="justify-center items-center text-center">Yaha ke liye kya krna hai bhai</p>
         </div>
       </div>
     </section>
