@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 const logos = [
-  "/logo_fieo.svg", // replace with actual image paths
+  "/logo_fieo.svg", 
   "/logo_spice.png",
   "/logo_apeda.png",
   "/FSSAI_Logo.png",

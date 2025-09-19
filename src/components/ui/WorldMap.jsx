@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 import DottedMap from "dotted-map";
@@ -8,6 +8,7 @@ import { useTheme } from "next-themes";
 
 export default function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
   const svgRef = useRef(null);
+  const [tooltip, setTooltip] = useState({ show: false, content: '', x: 0, y: 0 });
   const map = new DottedMap({ height: 100, grid: "diagonal" });
 
   const { theme } = useTheme();
@@ -31,8 +32,48 @@ export default function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
     return `M ${start.x} ${start.y} Q ${midX} ${midY} ${end.x} ${end.y}`;
   };
 
+  // Get unique locations to avoid duplicate labels
+  const getUniqueLocations = () => {
+    const locationMap = new Map();
+    
+    dots.forEach((dot) => {
+      const startKey = `${dot.start.lat}-${dot.start.lng}`;
+      const endKey = `${dot.end.lat}-${dot.end.lng}`;
+      
+      if (!locationMap.has(startKey)) {
+        locationMap.set(startKey, {
+          ...dot.start,
+          point: projectPoint(dot.start.lat, dot.start.lng)
+        });
+      }
+      
+      if (!locationMap.has(endKey)) {
+        locationMap.set(endKey, {
+          ...dot.end,
+          point: projectPoint(dot.end.lat, dot.end.lng)
+        });
+      }
+    });
+    
+    return Array.from(locationMap.values());
+  };
+
+  const handleMouseEnter = (e, location) => {
+    const rect = svgRef.current.getBoundingClientRect();
+    setTooltip({
+      show: true,
+      content: location.name || 'Location',
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top - 10
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setTooltip({ show: false, content: '', x: 0, y: 0 });
+  };
+
   return (
-    <div className="w-full aspect-[2/1]  bg-white rounded-lg  relative font-sans">
+    <div className="w-full aspect-[2/1] bg-white rounded-lg relative font-sans">
       <img
         src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
         className="h-full w-full [mask-image:linear-gradient(to_bottom,transparent,white_10%,white_90%,transparent)] pointer-events-none select-none"
@@ -44,7 +85,7 @@ export default function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
       <svg
         ref={svgRef}
         viewBox="0 0 800 400"
-        className="w-full h-full absolute inset-0 pointer-events-none select-none"
+        className="w-full h-full absolute inset-0 select-none"
       >
         {dots.map((dot, i) => {
           const startPoint = projectPoint(dot.start.lat, dot.start.lng);
@@ -93,6 +134,9 @@ export default function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
                 cy={projectPoint(dot.start.lat, dot.start.lng).y}
                 r="2"
                 fill={lineColor}
+                className="cursor-pointer"
+                onMouseEnter={(e) => handleMouseEnter(e, dot.start)}
+                onMouseLeave={handleMouseLeave}
               />
               <circle
                 cx={projectPoint(dot.start.lat, dot.start.lng).x}
@@ -100,6 +144,7 @@ export default function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
                 r="2"
                 fill={lineColor}
                 opacity="0.5"
+                className="pointer-events-none"
               >
                 <animate
                   attributeName="r"
@@ -125,6 +170,9 @@ export default function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
                 cy={projectPoint(dot.end.lat, dot.end.lng).y}
                 r="2"
                 fill={lineColor}
+                className="cursor-pointer"
+                onMouseEnter={(e) => handleMouseEnter(e, dot.end)}
+                onMouseLeave={handleMouseLeave}
               />
               <circle
                 cx={projectPoint(dot.end.lat, dot.end.lng).x}
@@ -132,6 +180,7 @@ export default function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
                 r="2"
                 fill={lineColor}
                 opacity="0.5"
+                className="pointer-events-none"
               >
                 <animate
                   attributeName="r"
@@ -154,6 +203,21 @@ export default function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
           </g>
         ))}
       </svg>
+      
+      {/* Tooltip */}
+      {tooltip.show && (
+        <div
+          className="absolute bg-slate-900 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium z-10 pointer-events-none"
+          style={{
+            left: tooltip.x,
+            top: tooltip.y,
+            transform: 'translate(-50%, -100%)'
+          }}
+        >
+          {tooltip.content}
+          <div className="absolute left-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-900 transform -translate-x-1/2" />
+        </div>
+      )}
     </div>
   );
 }
