@@ -10,7 +10,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 export default function HomePage() {
   return (
     <div className="min-h-screen">
-      <div className="flex justify-center items-center h-[600px] pt-16 md:pt-20">
+      <div className="flex justify-center items-center  ">
         <Banner className="w-1/2" />
       </div>
 
