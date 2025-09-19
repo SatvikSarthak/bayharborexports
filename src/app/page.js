@@ -7,11 +7,10 @@ import ProdandServices from "@/components/ProdandServ";
 export default function HomePage() {
   return (
     <div className=" ">
-    <div className="flex justify-center items-center h-[600px] pt-16 md:pt-20">
+      <div className="flex justify-center items-center h-[600px] pt-16 md:pt-20">
         <Banner className="w-1/2" />
       </div>
 
-      <AboutSection />
       <LogoCarousel />
       <ProdandServices />
       <WorldMapDemo />

@@ -22,11 +22,11 @@ export default function Navbar() {
             Products
           </Link>
         </div>
-        {/* <div className="hover:bg-[#00b4d8] hover:text-white   hover:rounded-full px-5 py-2">
+        <div className="hover:bg-[#00b4d8] hover:text-white   hover:rounded-full px-5 py-2">
           <Link href="/about" className=" font-medium ">
-            About
+            About Us
           </Link>
-        </div> */}
+        </div>
         <div className="hover:bg-[#0a4174] hover:text-white  hover:rounded-full px-5 py-2">
           <Link href="/services" className=" font-medium ">
             Services
