@@ -25,14 +25,14 @@ const Banner = () => {
       setSlideIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 2000); // 2 seconds per slide
+    }, 3000); 
 
     return () => clearInterval(timer);
   }, [images.length]);
 
   return (
     <div className="w-full h-[80vh] relative overflow-hidden  rounded-lg">
-      {/* Slides */}
+
       {images.map((image, index) => (
         <div
           key={index}
@@ -49,12 +49,11 @@ const Banner = () => {
             priority={index === 0} // Prioritize loading the first image
           />
           
-          {/* Optional: Add overlay content here */}
+       \
          
         </div>
       ))}
 
-      {/* Slide indicators */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
         {images.map((_, index) => (
           <button
