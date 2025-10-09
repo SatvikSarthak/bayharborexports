@@ -4,9 +4,9 @@ import Link from "next/link";
 
 export default function Footer() {
   let data = new Date().getFullYear();
-
+/*fixed bottom-0 left-0 z-50*/
   return (
-    <div className="flex flex-col px-8 py-3 w-full">
+    <div className="flex flex-col px-8 py-3 w-full  bg-white">
       <div className="flex flex-row  justify-between w-full pb-4 ">
         <div className="w-[200px] h-[60px]">
           <Link href="/">

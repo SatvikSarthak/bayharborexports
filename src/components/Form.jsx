@@ -7,6 +7,7 @@ export default function Form({ onSubmitSuccess }) {
     email: "",
     company: "",
     phone: "",
+    message: "",
     countryCode: "+91",
   });
 
@@ -66,6 +67,7 @@ Name: ${data.name}
 Email: ${data.email}
 Company: ${data.company || "N/A"}
 Phone: ${fullPhone}
+Message: ${data.message || "N/A"}
 ========================================
 
 `;
@@ -110,6 +112,7 @@ Phone: ${fullPhone}
         email: "",
         company: "",
         phone: "",
+        message: "",
         countryCode: "+91",
       });
 
@@ -205,7 +208,19 @@ Phone: ${fullPhone}
           </div>
         </div>
 
-
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 pb-2">
+            Message
+          </label>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Your message (optional)"
+            rows={4}
+            className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+          ></textarea>
+        </div>
         <div className="pt-4">
           <button
             type="submit"

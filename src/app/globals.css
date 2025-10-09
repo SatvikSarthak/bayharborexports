@@ -10,6 +10,9 @@ body{
 }
 
 
+main {
+  padding-top: 100px; /* equal to navbar height */
+}
 
 @layer base {
   :root {

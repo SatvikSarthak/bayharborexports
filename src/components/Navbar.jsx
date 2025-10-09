@@ -39,7 +39,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Right Explore Now Button */}
+
       <button
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
