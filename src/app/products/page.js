@@ -1,12 +1,26 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
+import { useSearchParams } from "next/navigation";
 import Product from "../../components/product";
 import { productsData } from "../../data/productsData";
 
 export default function Products() {
-  const categories = ["All", ...new Set(productsData.map((p) => p.category))];
+  const searchParams = useSearchParams();
+  const categoryFromUrl = searchParams.get('category');
+  
+  const categories = useMemo(() => ["All", ...new Set(productsData.map((p) => p.category))], []);
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [isOpen, setIsOpen] = useState(false); // controls expand/collapse
+  const [isOpen, setIsOpen] = useState(false); 
+  
+  
+  useEffect(() => {
+    if (categoryFromUrl && categories.includes(categoryFromUrl)) {
+      setSelectedCategory(categoryFromUrl);
+    } else if (!categoryFromUrl) {
+      
+      setSelectedCategory("All");
+    }
+  }, [categoryFromUrl, categories]);
 
   const filteredProducts =
     selectedCategory === "All"
@@ -15,7 +29,7 @@ export default function Products() {
 
   return (
     <div className="flex flex-col min-h-screen p-[40px]">
-      {/* Sidebar Categories */}
+     
       <div>
          <h1 className="text-4xl font-bold mb-6 text-center">Our Products</h1>
       </div>
