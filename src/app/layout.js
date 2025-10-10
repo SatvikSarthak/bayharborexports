@@ -4,6 +4,7 @@ import { Montserrat } from "next/font/google";
 import { Suspense } from "react";
 import Loading from "./loading";
 import Footer from "@/components/Footer";
+import FloatingContactButton from "@/components/FloatingContactButton";
 
 const montserrat = Montserrat({
   subsets: ["latin"], // required
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
           <main>{children}</main>
         </Suspense>
         <Footer />
+        <FloatingContactButton />
       </body>
     </html>
   );

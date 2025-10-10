@@ -1,13 +1,25 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import logo from "/public/example.jpg";
+import InquiryModal from "./InquiryModal";
 
 export default function Product({ product }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   // Return early if product is undefined
   if (!product) {
     return null;
   }
+
+  const handleInquiryClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="flex flex-col bg-white rounded-lg shadow-lg max-w-[300px]  min-h-[150px]  border-gray-200  border-[2px]  hover:shadow-xl transition-shadow duration-300">
@@ -37,12 +49,20 @@ export default function Product({ product }) {
           <p><span className="font-medium">Packaging:</span> {product.packaging}</p>
         </div>
 
-        <Link href="/contact-us" className="w-full">
-          <button className="w-full bg-[#0a4174] text-white py-3 px-4 rounded-md hover:bg-[#083356] transition-colors duration-300 font-medium mt-4">
-            Inquire Now
-          </button>
-        </Link>
+        <button 
+          onClick={handleInquiryClick}
+          className="w-full bg-[#0a4174] text-white py-3 px-4 rounded-md hover:bg-[#083356] transition-colors duration-300 font-medium mt-4"
+        >
+          Inquire Now
+        </button>
       </div>
+
+      {/* Inquiry Modal */}
+      <InquiryModal 
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        productName={product.name}
+      />
     </div>
   );
 }

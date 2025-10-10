@@ -8,8 +8,8 @@ export default function Page() {
   };
 
   return (
-    <div className="p-32 flex flex-col">
-      <div className="flex flex-col mb-8">
+    <div className="p-32  flex flex-col">
+      <div className="flex flex-col ">
         <p className="text-normal text-blue-500">Contact Us</p>
         <p className="text-3xl font-semibold">Get in touch with us</p>
         <p className="text-lg text-[#0a4174]">
@@ -20,7 +20,7 @@ export default function Page() {
       </div>
       <div className="flex flex-row w-full">
         <Form onSubmitSuccess={handleFormSubmit} />
-        <div className="ml-8">
+        <div className="pl-8">
           <ContactSectionMap />
         </div>
       </div>
