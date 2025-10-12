@@ -44,7 +44,7 @@ export default function Product({ product }) {
           {product.description}
         </p>
 
-        <div className="text-sm text-gray-500 space-y-1 text-center">
+        <div className="text-sm text-gray-500 space-y-1 whitespace-nowrap text-center">
           <p><span className="font-medium">Origin:</span> {product.origin}</p>
           <p><span className="font-medium">Packaging:</span> {product.packaging}</p>
         </div>

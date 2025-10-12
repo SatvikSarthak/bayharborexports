@@ -7,7 +7,7 @@ export const productsData = [
     description: "Premium whole black pepper with bold aroma and flavor.",
     origin: "Kerala, India",
     packaging: "500g / 1kg / 5kg",
-    image: "/blackPepper.png",
+    image: "/blackpepper.png",
     category: "Spices",
   },
   {
@@ -83,7 +83,7 @@ export const productsData = [
   {
     id: 9,
     slug: "turmeric",
-    name: "Turmeric",
+    name: "Turmeric(whole/powder)",
     description: "Pure ground turmeric with rich color and strong aroma.",
     origin: "Tamil Nadu, India",
     packaging: "500g / 1kg / 5kg",
@@ -157,7 +157,7 @@ export const productsData = [
     description: "Tangy tamarind used in chutneys and sauces.",
     origin: "Andhra Pradesh, India",
     packaging: "500g / 1kg / 5kg",
-    image: "/tamaridn.png",
+    image: "/tamarind.png",
     category: "Spices",
   },
   {
@@ -285,6 +285,7 @@ export const productsData = [
     category: "Grains",
   },
 
+
   // 🫘 PULSES
   {
     id: 29,
@@ -323,7 +324,7 @@ export const productsData = [
     description: "Premium quality urad dal used in Indian cuisine.",
     origin: "Madhya Pradesh, India",
     packaging: "25kg / 50kg",
-    image: "/uradDal.png",
+    image: "/blackmatpe.png",
     category: "Pulses",
   },
   {
