@@ -25,9 +25,7 @@ export default function Page({ params }) {
       return [
         { 
           icon: (
-            <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 18c-3.53 0-6.43-2.61-6.92-6H6v-2h-.92c.28-2.09 1.46-3.94 3.24-5.17L9 8.41 10.41 7l-.68-.68C10.94 6.11 11.46 6 12 6s1.06.11 1.68.32L13 7l1.41 1.41.68-1.58c1.78 1.23 2.96 3.08 3.24 5.17H18v2h.92c-.49 3.39-3.39 6-6.92 6z"/>
-            </svg>
+            <Image src="/authentic.png" alt="100% Authentic" width={30} height={30} />
           ), 
           label: "100% Authentic", 
           gradient: "from-green-50 to-emerald-50",
@@ -35,9 +33,7 @@ export default function Page({ params }) {
         },
         { 
           icon: (
-            <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-            </svg>
+           <Image src="/premium.svg" alt="Premium Grade" width={30} height={30} /> 
           ), 
           label: "Premium Grade", 
           gradient: "from-yellow-50 to-amber-50",
@@ -45,9 +41,7 @@ export default function Page({ params }) {
         },
         { 
           icon: (
-            <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M18 18.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5 1.5.67 1.5 1.5 1.5zm1.5-9H17V12h4.46L19.5 9.5zM6 18.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5 1.5.67 1.5 1.5 1.5zM20 8l3 4v5h-2c0 1.66-1.34 3-3 3s-3-1.34-3-3H9c0 1.66-1.34 3-3 3s-3-1.34-3-3H1V6c0-1.11.89-2 2-2h14v4h3zM3 6v9h.76c.55-.61 1.35-1 2.24-1s1.69.39 2.24 1H15V6H3z"/>
-            </svg>
+           <Image src="/ship.png" alt="Fast Shipping" width={40} height={30} />
           ), 
           label: "Fast Shipping", 
           gradient: "from-blue-50 to-cyan-50",
@@ -55,9 +49,7 @@ export default function Page({ params }) {
         },
         { 
           icon: (
-            <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"/>
-            </svg>
+           <Image src="/dollar.png" alt="Bulk Pricing" width={30} height={30} />
           ), 
           label: "Bulk Pricing", 
           gradient: "from-purple-50 to-pink-50",
