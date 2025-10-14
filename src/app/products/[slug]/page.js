@@ -29,7 +29,7 @@ export default function Page({ params }) {
               <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 18c-3.53 0-6.43-2.61-6.92-6H6v-2h-.92c.28-2.09 1.46-3.94 3.24-5.17L9 8.41 10.41 7l-.68-.68C10.94 6.11 11.46 6 12 6s1.06.11 1.68.32L13 7l1.41 1.41.68-1.58c1.78 1.23 2.96 3.08 3.24 5.17H18v2h.92c-.49 3.39-3.39 6-6.92 6z"/>
             </svg>
           ), 
-          label: "100% Natural", 
+          label: "100% Authentic", 
           gradient: "from-green-50 to-emerald-50",
           color: "text-green-600"
         },
@@ -77,7 +77,7 @@ export default function Page({ params }) {
         },
         { 
           icon: (
-             <svg width="30px" height="30px" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M21.2501 3C21.4925 3 21.7176 3.11688 21.8574 3.30983L21.9119 3.39706L25.9186 10.9098L25.9615 11.0122L25.9731 11.05L25.9901 11.1273L25.9994 11.2153L25.9973 11.3147L26.0001 11.25C26.0001 11.3551 25.9785 11.4552 25.9394 11.5461L25.9106 11.6057L25.87 11.6723L25.8173 11.7408L14.6 24.7047C14.4999 24.8391 14.3628 24.9277 14.2139 24.9703L14.1559 24.9844L14.0585 24.9979L13.9999 25L13.8993 24.9932L13.8142 24.9771L13.7109 24.9432L13.6852 24.931C13.5949 24.8911 13.5119 24.8316 13.4425 24.7535L2.17081 11.7263L2.1087 11.6387L2.06079 11.5456L2.02611 11.4463L2.00297 11.3152L2.00269 11.1878L2.01755 11.0891L2.02714 11.0499L2.06104 10.9538L2.08838 10.8971L6.08838 3.39706C6.20243 3.18321 6.41149 3.0396 6.64753 3.00704L6.75014 3H21.2501ZM17.9061 12H10.0911L14.0011 22.16L17.9061 12ZM8.48514 12H4.38914L11.7621 20.518L8.48514 12ZM23.6081 12H19.5151L16.2421 20.511L23.6081 12ZM10.0241 4.499H7.19914L3.99814 10.5H8.42314L10.0241 4.499ZM16.4231 4.499H11.5761L9.97514 10.5H18.0231L16.4231 4.499ZM20.8001 4.499H17.9751L19.5761 10.5H23.9991L20.8001 4.499Z" fill="#0a4174"></path> </g></svg>
+             <svg width="30px" height="30px" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLineCap="round" strokeLineJoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M21.2501 3C21.4925 3 21.7176 3.11688 21.8574 3.30983L21.9119 3.39706L25.9186 10.9098L25.9615 11.0122L25.9731 11.05L25.9901 11.1273L25.9994 11.2153L25.9973 11.3147L26.0001 11.25C26.0001 11.3551 25.9785 11.4552 25.9394 11.5461L25.9106 11.6057L25.87 11.6723L25.8173 11.7408L14.6 24.7047C14.4999 24.8391 14.3628 24.9277 14.2139 24.9703L14.1559 24.9844L14.0585 24.9979L13.9999 25L13.8993 24.9932L13.8142 24.9771L13.7109 24.9432L13.6852 24.931C13.5949 24.8911 13.5119 24.8316 13.4425 24.7535L2.17081 11.7263L2.1087 11.6387L2.06079 11.5456L2.02611 11.4463L2.00297 11.3152L2.00269 11.1878L2.01755 11.0891L2.02714 11.0499L2.06104 10.9538L2.08838 10.8971L6.08838 3.39706C6.20243 3.18321 6.41149 3.0396 6.64753 3.00704L6.75014 3H21.2501ZM17.9061 12H10.0911L14.0011 22.16L17.9061 12ZM8.48514 12H4.38914L11.7621 20.518L8.48514 12ZM23.6081 12H19.5151L16.2421 20.511L23.6081 12ZM10.0241 4.499H7.19914L3.99814 10.5H8.42314L10.0241 4.499ZM16.4231 4.499H11.5761L9.97514 10.5H18.0231L16.4231 4.499ZM20.8001 4.499H17.9751L19.5761 10.5H23.9991L20.8001 4.499Z" fill="#0a4174"></path> </g></svg>
           
           ), 
           label: "Premium Quality", 
@@ -162,16 +162,16 @@ export default function Page({ params }) {
           
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 shadow-md">
               <div className="grid grid-cols-3 gap-4 text-center">
-                <div>
-                  <div className="text-2xl mb-1">✓</div>
+                <div className="flex flex-col items-center">
+                  <div className="text-2xl mb-1"> <Image src="/certified.png" alt="ISO Certified" width={30} height={30} /></div>
                   <div className="text-xs font-medium text-gray-700">Quality Certified</div>
                 </div>
                 <div>
                   <div className="text-2xl mb-1">🌍</div>
                   <div className="text-xs font-medium text-gray-700">Global Export</div>
                 </div>
-                <div>
-                  <div className="text-2xl mb-1">📦</div>
+                 <div className="flex flex-col items-center">
+                  <div className="text-2xl mb-1"><Image src="/logistics.png" alt="Box" width={30} height={30} /></div>
                   <div className="text-xs font-medium text-gray-700">Bulk Orders</div>
                 </div>
               </div>
