@@ -1,14 +1,23 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function InquiryModal({ isOpen, onClose, productName }) {
+export default function InquiryModal({ isOpen, onClose, productName, quantity }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     product: productName || "",
+    quantity: quantity || "",
     message: ""
   });
+
+  // Update quantity when it changes from parent
+  useEffect(() => {
+    setFormData(prev => ({
+      ...prev,
+      quantity: quantity || ""
+    }));
+  }, [quantity]);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
@@ -41,6 +50,7 @@ export default function InquiryModal({ isOpen, onClose, productName }) {
           email: "",
           phone: "",
           product: productName || "",
+          quantity: quantity || "",
           message: ""
         });
         setSubmitStatus(null);
@@ -73,9 +83,9 @@ export default function InquiryModal({ isOpen, onClose, productName }) {
           </button>
         </div>
 
-        {/* Modal Body */}
+       
         <form onSubmit={handleSubmit} className="p-6">
-          {/* Selected Product */}
+         
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Product of Interest
@@ -90,7 +100,21 @@ export default function InquiryModal({ isOpen, onClose, productName }) {
             />
           </div>
 
-          {/* Name */}
+          <div className="mb-4">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Quantity (Optional)
+            </label>
+            <input
+              type="text"
+              name="quantity"
+              value={formData.quantity ? `${formData.quantity} kg` : ""}
+              onChange={handleInputChange}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50"
+              placeholder="No quantity selected"
+            />
+          </div>
+
+   
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Full Name *
@@ -106,7 +130,7 @@ export default function InquiryModal({ isOpen, onClose, productName }) {
             />
           </div>
 
-          {/* Email */}
+   
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Email Address *
@@ -122,7 +146,7 @@ export default function InquiryModal({ isOpen, onClose, productName }) {
             />
           </div>
 
-          {/* Phone */}
+      
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Phone Number *
@@ -138,7 +162,7 @@ export default function InquiryModal({ isOpen, onClose, productName }) {
             />
           </div>
 
-          {/* Message */}
+          
           <div className="mb-6">
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Additional Message (Optional)
@@ -153,7 +177,6 @@ export default function InquiryModal({ isOpen, onClose, productName }) {
             />
           </div>
 
-          {/* Submit Status */}
           {submitStatus === "success" && (
             <div className="mb-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded-md">
               Thank you! Your inquiry has been submitted successfully.
@@ -166,7 +189,7 @@ export default function InquiryModal({ isOpen, onClose, productName }) {
             </div>
           )}
 
-          {/* Action Buttons */}
+       
           <div className="flex space-x-4">
             <button
               type="button"
