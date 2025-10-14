@@ -9,11 +9,11 @@ const Banner = () => {
       alt: "Product showcase"
     },
     {
-      src: "/logo_fieo.svg", 
+      src: "/banner1.png", 
       alt: "Services overview"
     },
     {
-      src: "/product3.jpeg",
+      src: "/banner2.png",
       alt: "Featured products"
     },
   ];
@@ -31,7 +31,7 @@ const Banner = () => {
   }, [images.length]);
 
   return (
-    <div className="w-full h-[80vh] relative overflow-hidden  rounded-lg">
+    <div className="w-full h-[80vh] relative overflow-hidden ">
 
       {images.map((image, index) => (
         <div
@@ -45,7 +45,7 @@ const Banner = () => {
             src={image.src}
             alt={image.alt}
             fill
-            className="object-cover"
+            className="object-cover w-full h-full "
             priority={index === 0} // Prioritize loading the first image
           />
           
