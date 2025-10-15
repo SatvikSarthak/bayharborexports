@@ -5,7 +5,7 @@ import Image from "next/image";
 const Banner = () => {
   const images = [
     {
-      src: "/giraffe.jpg",
+      src: "/banner3.jpg",
       alt: "Product showcase"
     },
     {

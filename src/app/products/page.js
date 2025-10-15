@@ -10,7 +10,7 @@ export default function Products() {
   
   const categories = useMemo(() => ["All", ...new Set(productsData.map((p) => p.category))], []);
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [isOpen, setIsOpen] = useState(false); 
+  const [isOpen, setIsOpen] = useState(true); 
   
   
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function Products() {
          <h1 className="text-4xl font-bold mb-6 text-center">Our Products</h1>
       </div>
       <div className="flex flex-row pt-20 space-x-8">
-         <div className="w-1/4 pr-6 border-r border-gray-200">
+         <div className="w-[15%] pr-3 border-r border-gray-200">
  
         <div
           className="flex items-center justify-between mb-4 cursor-pointer select-none"

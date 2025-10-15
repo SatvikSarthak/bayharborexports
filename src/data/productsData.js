@@ -356,7 +356,7 @@ export const productsData = [
     description: "Durable and high-strength industrial bolts for multiple uses.",
     origin: "India",
     packaging: "Box / Bulk",
-    image: "/bolts.png",
+    image: "/bolts.jpg",
     category: "Fasteners",
   },
   {
@@ -366,7 +366,7 @@ export const productsData = [
     description: "Precision-engineered screws for industrial and domestic use.",
     origin: "India",
     packaging: "Box / Bulk",
-    image: "/screws.png",
+    image: "/screws1.jpg",
     category: "Fasteners",
   },
   {
@@ -376,7 +376,7 @@ export const productsData = [
     description: "Threaded studs for machinery and construction applications.",
     origin: "India",
     packaging: "Box / Bulk",
-    image: "/studs.png",
+    image: "/studs.jpeg",
     category: "Fasteners",
   },
   {
