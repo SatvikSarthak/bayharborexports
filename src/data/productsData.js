@@ -396,7 +396,7 @@ export const productsData = [
     description: "Wide range of washers for automotive and industrial use.",
     origin: "India",
     packaging: "Box / Bulk",
-    image: "/washers.png",
+    image: "/washer.jpeg",
     category: "Fasteners",
   },
   {
