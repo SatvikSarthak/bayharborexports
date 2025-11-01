@@ -26,7 +26,7 @@ export default function Page() {
       items: [
         { name: "Indian Spices", desc: "Cumin, Turmeric, Coriander & more" },
         { name: "Pulses & Grains", desc: "Lentils, Chickpeas, Rice, Wheat" },
-        { name: "Fresh Produce", desc: "Fruits & Vegetables" },
+        { name: "Fresh Produce", desc: "Fruits & Vegetables" }, 
         { name: "Dry Fruits & Oils", desc: "Seeds & Edible Oils" }
       ]
     },
@@ -160,14 +160,14 @@ export default function Page() {
               <div className="absolute inset-0 bg-gradient-to-br from-[#0a4174] via-[#0d5490] to-[#1a6bb3] flex items-center justify-center">
                 {/* Container Icon/Illustration */}
                 <div className="text-center text-white">
-                  <Image src="/cont.png" alt="Container Illustration" layout="fill" objectFit="cover" />
+                  <Image src="/cont1.jpeg" alt="Container Illustration" layout="fill" objectFit="cover" />
                       </div>
               </div>
               {/* Decorative overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
               
               {/* Stats Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+              {/* <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
                 <div className="grid grid-cols-3 gap-4 text-white text-center">
                   <div>
                     <div className="text-3xl font-bold">50+</div>
@@ -182,7 +182,7 @@ export default function Page() {
                     <div className="text-xs opacity-90">Quality</div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -206,11 +206,10 @@ export default function Page() {
               We specialize in <strong>end-to-end sourcing, procurement, and export solutions</strong>, ensuring quality, reliability, and compliance at every stage of trade.
             </p>
 
-            {/* Key Points */}
             <div className="space-y-4 pt-4">
               <div className="flex items-start gap-3">
-                <div className="bg-green-100 rounded-full p-2 mt-1">
-                  <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <div className="bg-blue-100 rounded-full p-2 mt-1">
+                   <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                 </div>
@@ -360,16 +359,15 @@ export default function Page() {
                     }}></div>
                   </div>
 
-                  {/* Content */}
+
                   <div className="relative h-full p-8 flex flex-col text-white min-h-[280px]">
-                    {/* Icon */}
+                   
                     <div className="mb-6 transform transition-all duration-500 group-hover:scale-110">
                       <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:bg-white/20 transition-all duration-300 border border-white/20">
                         {strength.icon}
                       </div>
                     </div>
 
-                    {/* Title */}
                     <h3 className="text-2xl font-bold mb-3 group-hover:translate-x-1 transition-transform duration-300">
                       {strength.title}
                     </h3>
@@ -380,7 +378,7 @@ export default function Page() {
                     </p>
                   </div>
 
-                  {/* Subtle Shine Effect */}
+                 
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
                     <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   </div>
@@ -389,8 +387,7 @@ export default function Page() {
             })}
           </div>
 
-          {/* Minimal Stats */}
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+          {/* <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center p-6 bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300">
               <div className="text-4xl font-bold text-[#0a4174] mb-2">100+</div>
               <div className="text-sm text-gray-600">Certified Suppliers</div>
@@ -407,10 +404,10 @@ export default function Page() {
               <div className="text-4xl font-bold text-[#0a4174] mb-2">24/7</div>
               <div className="text-sm text-gray-600">Customer Support</div>
             </div>
-          </div>
+          </div> */}
         </div>
 
-        {/* Mission Section */}
+        
         <div className="bg-gradient-to-r from-[#0a4174] to-[#0d5490] rounded-3xl p-12 text-white shadow-2xl mb-20">
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
@@ -420,7 +417,7 @@ export default function Page() {
           </div>
         </div>
 
-        {/* CTA Section */}
+ 
         <div className="text-center bg-white rounded-2xl shadow-xl p-12 border border-gray-100">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Let&apos;s Work Together
