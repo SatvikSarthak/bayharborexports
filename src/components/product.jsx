@@ -51,8 +51,7 @@ export default function Product({ product }) {
 
         <button 
           onClick={handleInquiryClick}
-          className="w-full bg-[#0a4174] text-white py-3 px-4 rounded-md hover:bg-[#083356] transition-colors duration-300 font-medium mt-4"
-        >
+       className="px-8 py-4 text-white bg-[#0a4174] rounded-lg font-semibold hover:bg-white hover:text-[#0a4174] hover:border-gray-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"  >
           Inquire Now
         </button>
       </div>

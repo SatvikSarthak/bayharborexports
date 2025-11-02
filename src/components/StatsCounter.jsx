@@ -90,8 +90,11 @@ export default function StatsCounter() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our Track Record
+         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Our{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0a4174] to-blue-600">
+            Track Record
+            </span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Numbers that speak for our commitment to excellence and global reach
@@ -126,14 +129,12 @@ export default function StatsCounter() {
           <p className="text-gray-700 mb-6 text-lg">
             Join hundreds of satisfied clients worldwide
           </p>
-          <a
+           <a
             href="/contact-us"
-            className="inline-flex items-center bg-[#0a4174] hover:bg-[#083358] text-white px-8 py-4 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            className="inline-block px-6 py-3 bg-gradient-to-r from-[#0a4174] to-blue-600 text-white font-semibold rounded-full
+              hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
           >
-            Partner With Us Today
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            Partner with us today →
           </a>
         </div>
       </div>

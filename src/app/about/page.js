@@ -129,8 +129,8 @@ export default function Page() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/products"
-              className="bg-white text-[#0a4174] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center"
-            >
+              className="px-8 py-4 bg-white text-[#0a4174] whitespace-nowrap overflow-hidden  rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
+                >
               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M20 2H4c-1 0-2 .9-2 2v3.01c0 .72.43 1.34 1 1.69V20c0 1.1 1.1 2 2 2h14c.9 0 2-.9 2-2V8.7c.57-.35 1-.97 1-1.69V4c0-1.1-1-2-2-2zm-5 12H9v-2h6v2zm5-7H4V4h16v3z"/>
               </svg>
@@ -192,10 +192,13 @@ export default function Page() {
               <div className="inline-block bg-[#0a4174] text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
                 About Bayharbor Exports Pvt. Ltd.
               </div>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
-                Bridging India to the World —{" "}
-                <span className="text-[#0a4174]">One Shipment at a Time</span>
-              </h1>
+               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Bridging India to the World —{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0a4174] to-blue-600">
+              One Shipment at a Time
+            </span>
+          </h2>
+             
             </div>
 
             <p className="text-lg text-gray-700 leading-relaxed">
@@ -250,8 +253,11 @@ export default function Page() {
         <div className="mb-20">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              What We Offer
-            </h2>
+            What{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0a4174] to-blue-600">
+             We Offer
+            </span>
+          </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Discover our comprehensive range of premium products, carefully sourced and exported with excellence
             </p>
@@ -333,8 +339,11 @@ export default function Page() {
         <div className="mb-20">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Our Strengths
-            </h2>
+            Our{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0a4174] to-blue-600">
+            Strengths
+            </span>
+          </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Built on a foundation of trust, quality, and innovation — discover what makes us your ideal export partner
             </p>
@@ -407,8 +416,8 @@ export default function Page() {
           </div> */}
         </div>
 
-        
-        <div className="bg-gradient-to-r from-[#0a4174] to-[#0d5490] rounded-3xl p-12 text-white shadow-2xl mb-20">
+
+        <div className="bg-gradient-to-r from-[#0a4174] to-blue-600 text-white px-8 py-12 mb-16 rounded-full font-semibold shadow-xl hover:shadow-2xl transform transition-all duration-300">
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
             <p className="text-xl leading-relaxed text-blue-100">
@@ -427,7 +436,7 @@ export default function Page() {
           </p>
           <Link 
             href="/contact-us"
-            className="inline-block bg-[#0a4174] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#083358] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            className="bg-gradient-to-r from-[#0a4174] to-blue-600 text-white px-8 py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
           >
             Get In Touch Today
           </Link>

@@ -12,26 +12,26 @@ export default function HeroBanner() {
       title: "Premium Indian Exports",
       highlight: "Worldwide",
       subtitle: "From India's finest producers to your doorstep — experience quality that speaks for itself",
-      badge: "🌍 Global Export Partner"
+      badge: " Global Export Partner"
     },
     {
       title: "Quality Certified Products",
       highlight: "You Can Trust",
       subtitle: "ISO certified excellence in every shipment. Your success is our commitment.",
-      badge: "✓ ISO 9001 Certified"
+      badge: "ISO 9001 Certified"
     },
     {
       title: "50+ Countries Served",
       highlight: "And Growing",
       subtitle: "Join thousands of satisfied clients across the globe. Fast, reliable, and secure.",
-      badge: "🚢 Worldwide Delivery"
+      badge: " Worldwide Delivery"
     }
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 5000); 
 
     return () => clearInterval(timer);
   }, []);

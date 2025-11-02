@@ -103,8 +103,11 @@ export default function ExportJourney() {
               ✨ Our Process
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0a4174] mb-3">
-            Your Export Journey
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Your{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0a4174] to-blue-600">
+             Export Journey
+            </span>
           </h2>
           <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto mb-6">
             From India's finest suppliers to your doorstep - a seamless process

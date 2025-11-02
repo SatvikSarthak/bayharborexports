@@ -14,7 +14,12 @@ export default function LogoCarousel() {
   return (
     <div className="relative w-full overflow-hidden bg-white py-6 space-y-10">
       <div className="flex flex-col text-center justify-center items-center text-4xl">
-        <p className="text-[#0a4174] font-bold">Our Licences</p>
+       <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Our{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0a4174] to-blue-600">
+             Licenses
+            </span>
+          </h2>
         <p className="text-sm text-gray-600 mx-auto max-w-2xl py-4">
           Certified and accredited by recognized national and international
           authorities, ensuring trust and compliance.
