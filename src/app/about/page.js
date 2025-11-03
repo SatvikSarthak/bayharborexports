@@ -52,63 +52,57 @@ export default function Page() {
   const strengths = [
     {
       icon: (
-        <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 18c-4.41 0-8-3.59-8-8V8.3l8-4.5 8 4.5V12c0 4.41-3.59 8-8 8z"/>
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       ),
       title: "Authentic Indian Sourcing",
-      description: "Partnered with certified manufacturers and processors",
-      color: "from-[#0a4174] to-[#0d5490]"
+      description: "Partnered with certified manufacturers and processors"
     },
     {
       icon: (
-        <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
       title: "Quality Assurance",
-      description: "Multi-level inspection before dispatch",
-      color: "from-[#0c4d7d] to-[#0e5a94]"
+      description: "Multi-level inspection before dispatch"
     },
     {
       icon: (
-        <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
       title: "Global Trade Expertise",
-      description: "Compliance-ready documentation and logistics",
-      color: "from-[#094070] to-[#0b4d85]"
+      description: "Compliance-ready documentation and logistics"
     },
     {
       icon: (
-        <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/>
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
         </svg>
       ),
       title: "Flexible Terms",
-      description: "Supporting small and bulk orders (FOB, CIF, CNF)",
-      color: "from-[#0a4276] to-[#0c4f8a]"
+      description: "Supporting small and bulk orders (FOB, CIF, CNF)"
     },
     {
       icon: (
-        <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20 2H4c-1 0-2 .9-2 2v3.01c0 .72.43 1.34 1 1.69V20c0 1.1 1.1 2 2 2h14c.9 0 2-.9 2-2V8.7c.57-.35 1-.97 1-1.69V4c0-1.1-1-2-2-2zm-5 12H9v-2h6v2zm5-7H4V4h16v3z"/>
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
         </svg>
       ),
       title: "Custom Packaging",
-      description: "Private labeling options available",
-      color: "from-[#0b4579] to-[#0d5291]"
+      description: "Private labeling options available"
     },
     {
       icon: (
-        <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       ),
       title: "Trusted Partnership",
-      description: "Integrity and customer satisfaction in every transaction",
-      color: "from-[#083d6f] to-[#0a4a81]"
+      description: "Integrity and customer satisfaction in every transaction"
     }
   ];
 
@@ -335,7 +329,8 @@ export default function Page() {
           </div>
         </div>
 
-        {/* Our Strengths - Even Grid */}
+       
+               
         <div className="mb-20">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -349,71 +344,32 @@ export default function Page() {
             </p>
           </div>
 
-          {/* Equal Size Grid - 3 columns, 2 rows */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {strengths.map((strength, index) => {
-              return (
-                <div
-                  key={index}
-                  className="group relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] cursor-pointer"
-                >
-                  {/* Minimal Gradient Background */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${strength.color} transition-all duration-500`}></div>
-                  
-                  {/* Subtle Pattern Overlay */}
-                  <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                    <div className="absolute inset-0" style={{
-                      backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-                      backgroundSize: '24px 24px'
-                    }}></div>
-                  </div>
-
-
-                  <div className="relative h-full p-8 flex flex-col text-white min-h-[280px]">
-                   
-                    <div className="mb-6 transform transition-all duration-500 group-hover:scale-110">
-                      <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:bg-white/20 transition-all duration-300 border border-white/20">
-                        {strength.icon}
-                      </div>
-                    </div>
-
-                    <h3 className="text-2xl font-bold mb-3 group-hover:translate-x-1 transition-transform duration-300">
-                      {strength.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-base text-white/90 leading-relaxed flex-grow">
-                      {strength.description}
-                    </p>
-                  </div>
-
-                 
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+          {/* Minimalistic Even Grid - 3 columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {strengths.map((strength, index) => (
+              <div
+                key={index}
+                className="group bg-white rounded-2xl p-8 border border-gray-200 transition-all duration-300 hover:border-[#0a4174] hover:shadow-xl hover:-translate-y-1"
+              >
+                {/* Icon */}
+                <div className="mb-6">
+                  <div className="w-14 h-14 rounded-xl bg-gray-50 flex items-center justify-center text-[#0a4174] group-hover:bg-[#0a4174] group-hover:text-white transition-all duration-300">
+                    {strength.icon}
                   </div>
                 </div>
-              );
-            })}
-          </div>
 
-          {/* <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center p-6 bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300">
-              <div className="text-4xl font-bold text-[#0a4174] mb-2">100+</div>
-              <div className="text-sm text-gray-600">Certified Suppliers</div>
-            </div>
-            <div className="text-center p-6 bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300">
-              <div className="text-4xl font-bold text-[#0a4174] mb-2">50+</div>
-              <div className="text-sm text-gray-600">Export Countries</div>
-            </div>
-            <div className="text-center p-6 bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300">
-              <div className="text-4xl font-bold text-[#0a4174] mb-2">1000+</div>
-              <div className="text-sm text-gray-600">Successful Shipments</div>
-            </div>
-            <div className="text-center p-6 bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300">
-              <div className="text-4xl font-bold text-[#0a4174] mb-2">24/7</div>
-              <div className="text-sm text-gray-600">Customer Support</div>
-            </div>
-          </div> */}
+                {/* Title */}
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {strength.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-600 leading-relaxed">
+                  {strength.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
 

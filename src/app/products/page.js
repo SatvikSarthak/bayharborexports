@@ -30,8 +30,13 @@ export default function Products() {
   return (
     <div className="flex flex-col min-h-screen p-[40px]">
      
-      <div>
-         <h1 className="text-4xl font-bold mb-6 text-center">Our Products</h1>
+      <div className="flex justify-center items-center text-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+           Our{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0a4174] to-blue-600">
+          Products
+            </span>
+          </h2>
       </div>
       <div className="flex flex-row pt-20 space-x-8">
          <div className="w-[15%] pr-3 border-r border-gray-200">
