@@ -242,7 +242,7 @@ export const productsData = [
     description: "Economical broken rice ideal for processed foods and feeds.",
     origin: "Chhattisgarh, India",
     packaging: "25kg / 50kg",
-    image: "/brokenRice.png",
+    image: "/brokenrice.png",
     category: "Grains",
   },
   {
