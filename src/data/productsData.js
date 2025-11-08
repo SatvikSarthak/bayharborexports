@@ -189,7 +189,7 @@ export const productsData = [
     description: "Classic Indian spice blend for curries and gravies.",
     origin: "India",
     packaging: "250g / 500g / 1kg",
-    image: "/garamMasala.png",
+    image: "/garammasala.png",
     category: "Spice Blends",
   },
   {
