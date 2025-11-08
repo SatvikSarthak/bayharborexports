@@ -28,7 +28,7 @@ export default function Products() {
       : productsData.filter((p) => p.category === selectedCategory);
 
   return (
-    <div className="flex flex-col min-h-screen p-[40px]">
+    <div className="flex flex-col min-h-screen p-[32px]">
      
       <div className="flex justify-center items-center text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">

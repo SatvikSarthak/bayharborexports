@@ -1,5 +1,5 @@
 export const productsData = [
-  // 🌶️ SPICES
+
   {
     id: 1,
     slug: "black-pepper",
@@ -7,7 +7,7 @@ export const productsData = [
     description: "Premium whole black pepper with bold aroma and flavor.",
     origin: "Kerala, India",
     packaging: "500g / 1kg / 5kg",
-    image: "/blackpepper.png",
+    image: "/blackpepper.jpeg",
     category: "Spices",
   },
   {
@@ -117,7 +117,7 @@ export const productsData = [
     description: "Strong aromatic cloves with deep warm flavor.",
     origin: "Kerala, India",
     packaging: "250g / 500g / 1kg",
-    image: "/clove.png",
+    image: "/clove.jpeg",
     category: "Spices",
   },
   {
@@ -179,7 +179,7 @@ export const productsData = [
     description: "Authentic curry powder and paste for flavorful dishes.",
     origin: "India",
     packaging: "500g / 1kg / 5kg",
-    image: "/curryPowder.png",
+    image: "/curry.png",
     category: "Spice Blends",
   },
   {
@@ -199,7 +199,7 @@ export const productsData = [
     description: "Custom seasoning blends for snacks and processed foods.",
     origin: "India",
     packaging: "500g / 1kg / 5kg",
-    image: "/seasonings.png",
+    image: "/seasoning.png",
     category: "Spice Blends",
   },
   {
@@ -209,7 +209,7 @@ export const productsData = [
     description: "Natural spice essential oils for culinary and medicinal uses.",
     origin: "India",
     packaging: "250ml / 500ml / 1L",
-    image: "/spiceOils.png",
+    image: "/spiceoil.png",
     category: "Spice Blends",
   },
   {
@@ -231,21 +231,12 @@ export const productsData = [
     description: "Premium long-grain basmati rice for export quality meals.",
     origin: "Punjab, India",
     packaging: "10kg / 20kg / 50kg",
-    image: "/basmatiRice.png",
+    image: "/rice.png",
     category: "Grains",
   },
+ 
   {
     id: 24,
-    slug: "non-basmati-rice",
-    name: "Non-Basmati Rice",
-    description: "High-quality non-basmati rice suitable for daily use.",
-    origin: "West Bengal, India",
-    packaging: "10kg / 25kg / 50kg",
-    image: "/nonBasmati.png",
-    category: "Grains",
-  },
-  {
-    id: 25,
     slug: "broken-rice",
     name: "Broken Rice",
     description: "Economical broken rice ideal for processed foods and feeds.",
@@ -255,7 +246,7 @@ export const productsData = [
     category: "Grains",
   },
   {
-    id: 26,
+    id: 25,
     slug: "wheat",
     name: "Wheat",
     description: "Top-grade wheat grains for flour milling and export.",
@@ -265,17 +256,17 @@ export const productsData = [
     category: "Grains",
   },
   {
-    id: 27,
+    id: 26,
     slug: "maize",
     name: "Maize (Corn)",
     description: "High-quality yellow maize suitable for food and feed use.",
     origin: "Madhya Pradesh, India",
     packaging: "25kg / 50kg",
-    image: "/maize.png",
+    image: "/corn1.png",
     category: "Grains",
   },
   {
-    id: 28,
+    id: 27,
     slug: "millets",
     name: "Millets (Sorghum, Finger Millet, Pearl Millet)",
     description: "Nutritious millets rich in fiber and protein.",
@@ -288,47 +279,47 @@ export const productsData = [
 
   // 🫘 PULSES
   {
-    id: 29,
+    id: 28,
     slug: "chickpeas",
     name: "Chickpeas (Kabuli Chana, Desi Chana)",
     description: "High-protein chickpeas available in Kabuli and Desi varieties.",
     origin: "Madhya Pradesh, India",
     packaging: "25kg / 50kg",
-    image: "/chickpeas.png",
+    image: "/chickpeas.jpeg",
     category: "Pulses",
   },
   {
-    id: 30,
+    id: 29,
     slug: "red-lentils",
     name: "Red Lentils (Masoor Dal)",
     description: "Polished red lentils rich in protein and iron.",
     origin: "Uttar Pradesh, India",
     packaging: "25kg / 50kg",
-    image: "/redLentils.png",
+    image: "/redLentils.jpeg",
     category: "Pulses",
   },
   {
-    id: 31,
+    id: 30,
     slug: "moong-beans",
     name: "Moong Beans (Moong Dal)",
     description: "Healthy green gram split and whole varieties.",
     origin: "Rajasthan, India",
     packaging: "25kg / 50kg",
-    image: "/moong.png",
+    image: "/moong.jpeg",
     category: "Pulses",
   },
   {
-    id: 32,
+    id: 31 ,
     slug: "black-matpe",
     name: "Black Matpe (Urad Dal)",
     description: "Premium quality urad dal used in Indian cuisine.",
     origin: "Madhya Pradesh, India",
     packaging: "25kg / 50kg",
-    image: "/blackmatpe.png",
+    image: "/blackMatpe.png",
     category: "Pulses",
   },
   {
-    id: 33,
+    id: 32,
     slug: "toor-dal",
     name: "Toor Dal (Pigeon Pea)",
     description: "Popular dal variety rich in protein and taste.",
@@ -338,7 +329,7 @@ export const productsData = [
     category: "Pulses",
   },
   {
-    id: 34,
+    id: 33,
     slug: "kidney-beans",
     name: "Kidney Beans (Rajma)",
     description: "High-quality rajma beans used in curries and salads.",
@@ -350,7 +341,7 @@ export const productsData = [
 
   // 🔩 FASTENERS
   {
-    id: 35,
+    id: 34,
     slug: "bolts",
     name: "Bolts",
     description: "Durable and high-strength industrial bolts for multiple uses.",
@@ -360,7 +351,7 @@ export const productsData = [
     category: "Fasteners",
   },
   {
-    id: 36,
+    id: 35,
     slug: "screws",
     name: "Screws (Machine, Self-Tapping, Wood)",
     description: "Precision-engineered screws for industrial and domestic use.",
@@ -370,7 +361,7 @@ export const productsData = [
     category: "Fasteners",
   },
   {
-    id: 37,
+    id: 36,
     slug: "studs",
     name: "Studs",
     description: "Threaded studs for machinery and construction applications.",
@@ -380,7 +371,7 @@ export const productsData = [
     category: "Fasteners",
   },
   {
-    id: 38,
+    id: 37,
     slug: "nuts",
     name: "Nuts (Hex, Lock, Flange)",
     description: "Assorted nut types for fastening and mechanical joints.",
@@ -390,7 +381,7 @@ export const productsData = [
     category: "Fasteners",
   },
   {
-    id: 39,
+    id: 38,
     slug: "washers",
     name: "Washers (Flat, Spring, Lock)",
     description: "Wide range of washers for automotive and industrial use.",
@@ -400,7 +391,7 @@ export const productsData = [
     category: "Fasteners",
   },
   {
-    id: 40,
+    id: 39,
     slug: "pins",
     name: "Pins (Cotter, Dowel, Clevis)",
     description: "High-quality fastening pins used across mechanical applications.",
@@ -410,7 +401,7 @@ export const productsData = [
     category: "Fasteners",
   },
   {
-    id: 41,
+    id: 40,
     slug: "rivets",
     name: "Rivets",
     description: "Strong and durable rivets for industrial and construction use.",
