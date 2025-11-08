@@ -7,6 +7,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import ExportJourney from "@/components/ExportJourney";
 import { WorldMapDemo } from "@/components/Map";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import CompareDemo from "@/components/CompareD";
 
 export default function HomePage() {
   return (
@@ -33,7 +34,9 @@ export default function HomePage() {
       <ScrollReveal offset={150}>
         <StatsCounter />
       </ScrollReveal>
-
+<ScrollReveal offset={150}>
+    <CompareDemo/>
+</ScrollReveal>
       {/* World Map */}
       <ScrollReveal offset={150}>
         <WorldMapDemo />
