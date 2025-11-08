@@ -315,7 +315,7 @@ export const productsData = [
     description: "Premium quality urad dal used in Indian cuisine.",
     origin: "Madhya Pradesh, India",
     packaging: "25kg / 50kg",
-    image: "/blackMatpe.png",
+    image: "/blackM.png",
     category: "Pulses",
   },
   {
