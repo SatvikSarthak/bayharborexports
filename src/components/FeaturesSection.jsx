@@ -1,9 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Button } from "./ui/button";
 
 export default function FeaturesSection() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const router = useRouter();
 
   const features = [
     {
@@ -144,7 +147,10 @@ export default function FeaturesSection() {
 
         {/* Bottom Call to Action */}
         <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#0a4174] to-blue-600 text-white px-8 py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 cursor-pointer">
+          <div 
+            onClick={() => router.push('/products')}
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#0a4174] to-blue-600 text-white px-8 py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 cursor-pointer"
+          >
             <span>Explore Our Products</span>
             <svg className="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

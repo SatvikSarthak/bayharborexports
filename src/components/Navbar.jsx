@@ -6,10 +6,12 @@ import arrow1 from "/public/arrow1.png";
 import arrow2 from "/public/arrow2.png";
 import { useState } from "react";
 import { productsData } from "../data/productsData";
+import { useRouter } from "next/navigation";
 export default function Navbar() {
   const [isHovered, setIsHovered] = useState(false);
   const [showProductDropdown, setShowProductDropdown] = useState(false);
-  
+  const [isGetInTouchHovered, setIsGetInTouchHovered] = useState(false);
+  const router = useRouter();
   // Get unique categories from products data
   const categories = [...new Set(productsData.map((p) => p.category))];
   
@@ -80,16 +82,25 @@ export default function Navbar() {
 
 
       <button
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className="flex items-center hover:bg-[#0a4174] border border-gray-300 hover:text-white rounded-full px-5 py-2 space-x-2 transition"
+        onMouseEnter={() => setIsGetInTouchHovered(true)}
+        onMouseLeave={() => setIsGetInTouchHovered(false)}
+        onClick={()=>router.push('/contact-us')}
+        className="flex items-center hover:scale-105 bg-gradient-to-r from-[#0a4174] to-blue-600 text-white border border-gray-300 hover:text-white rounded-full px-5 py-2 space-x-2 transition"
       >
         <span className="font-medium">Get in Touch</span>
-        <Image
-          src={isHovered ? arrow2 : arrow1}
-          alt="upright arrow"
-          className="w-7 border rounded-full p-1 transition duration-300"
-        />
+        <div className="w-7 h-7 border rounded-full p-1 flex items-center justify-center transition-all duration-300 overflow-hidden">
+          {isGetInTouchHovered ? (
+            <svg className="w-4 h-4 animate-bounce-small transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          ) : (
+            <Image
+              src={arrow2}
+              alt="upright arrow"
+              className="w-full h-full object-contain transition-all duration-300"
+            />
+          )}
+        </div>
       </button>
     </nav>
   );

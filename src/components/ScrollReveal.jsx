@@ -7,11 +7,19 @@ export function ScrollReveal({ children, offset = 100, className }) {
   const ref = useRef(null);
   const controls = useAnimation();
   const [isVisible, setIsVisible] = useState(false);
+  const isMountedRef = useRef(false);
+
+  useEffect(() => {
+    isMountedRef.current = true;
+    return () => {
+      isMountedRef.current = false;
+    };
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && isMountedRef.current) {
           setIsVisible(true);
           controls.start("visible");
         }

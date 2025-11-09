@@ -1,25 +1,14 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import logo from "/public/example.jpg";
-import InquiryModal from "./InquiryModal";
 
-export default function Product({ product }) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
+export default function 
+Product({ product }) {
   // Return early if product is undefined
   if (!product) {
     return null;
   }
-
-  const handleInquiryClick = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
 
   return (
     <div className="flex flex-col bg-white rounded-lg shadow-lg max-w-[300px]  min-h-[150px]  border-gray-200  border-[2px]  hover:shadow-xl transition-shadow duration-300">
@@ -49,19 +38,14 @@ export default function Product({ product }) {
           <p><span className="font-medium">Packaging:</span> {product.packaging}</p>
         </div>
 
-        <button 
-          onClick={handleInquiryClick}
-       className="px-8 py-4 text-white bg-[#0a4174] rounded-lg font-semibold hover:bg-white hover:text-[#0a4174] hover:border-gray-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"  >
-          Inquire Now
-        </button>
+        <Link href={`/products/${product.slug}`}>
+          <button 
+            className="w-full px-8 py-4 text-white bg-[#0a4174] rounded-lg font-semibold hover:bg-white hover:text-[#0a4174] hover:border-gray-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
+          >
+            Inquire Now
+          </button>
+        </Link>
       </div>
-
-      {/* Inquiry Modal */}
-      <InquiryModal 
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-        productName={product.name}
-      />
     </div>
   );
 }

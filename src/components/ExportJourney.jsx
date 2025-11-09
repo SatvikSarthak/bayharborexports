@@ -96,7 +96,7 @@ export default function ExportJourney() {
           <div className="h-2 bg-gray-200 rounded-full shadow-inner">
             <motion.div 
               style={{ width }} 
-              className="h-full bg-gradient-to-r from-[#0a4174] via-green-500 via-purple-500 to-orange-500 rounded-full shadow-lg"
+              className="h-full bg-gradient-to-r from-[#0a4174] via-green-500 to-orange-500 rounded-full shadow-lg"
             />
           </div>
           
