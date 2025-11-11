@@ -91,8 +91,8 @@ export default function CompareDemo() {
 
             {/* Bayharbor Export */}
             <div className="group relative bg-gradient-to-br from-[#0a4174] to-blue-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02]">
-              <div className="absolute -top-3 left-6 bg-white text-[#0a4174] px-4 py-1 rounded-full text-sm font-bold shadow-md">
-                Bayharbor Exports
+              <div className="absolute -top-3 left-6 bg-gradient-to-r from-slate-100 to-slate-200 text-[#0a4174] px-4 py-1 rounded-full text-sm font-bold shadow-md border border-slate-300">
+                Bayharbor Exports 
               </div>
 
               <div className="mt-6 mb-6">

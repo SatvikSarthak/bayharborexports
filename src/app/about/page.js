@@ -107,43 +107,59 @@ export default function Page() {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-white to-slate-50">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-[#0a4174] to-[#0d5490] text-white py-20 px-6 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[url('/pattern.svg')] bg-repeat"></div>
-        </div>
-        <div className="max-w-7xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-            Connecting India&apos;s Best to the World
+    <div className="bg-white">
+      {/* Hero Section - Minimal Design */}
+      <section className="relative bg-white py-24 px-6 overflow-hidden border-b border-gray-100">
+        {/* Subtle Background Accent */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-blue-50 to-transparent opacity-50"></div>
+        
+        <div className="max-w-6xl mx-auto relative z-10">
+          {/* Small Badge */}
+          <div className="text-center mb-6">
+            <span className="inline-block px-4 py-1.5 bg-[#0a4174]/10 text-[#0a4174] rounded-full text-sm font-medium">
+              Trusted Global Export Partner
+            </span>
+          </div>
+
+          {/* Main Heading */}
+          <h1 className="text-5xl md:text-6xl font-bold text-center mb-6 leading-tight text-gray-900">
+            Connecting India&apos;s Best
+            <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0a4174] to-blue-600">
+              to the World
+            </span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed text-blue-100">
-            Your trusted export partner for premium spices, agro products, pulses, grains, dry fruits, and more — sourced directly from India&apos;s heartlands with uncompromised quality and reliability.
+
+          {/* Description */}
+          <p className="text-xl text-gray-600 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
+            Your trusted export partner for premium spices, agro products, pulses, grains, dry fruits, and more — sourced directly from India&apos;s heartlands.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link 
               href="/products"
-              className="px-8 py-4 bg-white text-[#0a4174] whitespace-nowrap overflow-hidden  rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
-                >
-              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20 2H4c-1 0-2 .9-2 2v3.01c0 .72.43 1.34 1 1.69V20c0 1.1 1.1 2 2 2h14c.9 0 2-.9 2-2V8.7c.57-.35 1-.97 1-1.69V4c0-1.1-1-2-2-2zm-5 12H9v-2h6v2zm5-7H4V4h16v3z"/>
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gradient-to-r from-[#0a4174] to-blue-600 text-white rounded-lg font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-lg"
+            >
+              <span>Explore Our Products</span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>
-              Explore Our Products
             </Link>
             <Link 
               href="/contact-us"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#0a4174] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-[#0a4174] hover:text-[#0a4174] transition-all duration-300"
             >
-              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-              </svg>
-              Partner With Us
+              <span>Partner With Us</span>
             </Link>
           </div>
         </div>
+
+        
+        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#0a4174] to-transparent opacity-20"></div>
       </section>
 
-      {/* About Section */}
+     
       <section className="max-w-7xl mx-auto px-6 py-20">
         {/* Split Section - Image & Text */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
@@ -392,7 +408,7 @@ export default function Page() {
           </p>
           <Link 
             href="/contact-us"
-            className="bg-gradient-to-r from-[#0a4174] to-blue-600 text-white px-8 py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+            className="bg-gradient-to-r  from-[#0a4174] to-blue-600 text-white px-8 py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl transform  transition-all duration-300"
           >
             Get In Touch Today
           </Link>
