@@ -78,6 +78,11 @@ export default function Navbar() {
             Contact Us
           </Link>
         </div>
+        <div className="hover:bg-[#0a4174]  hover:text-white  hover:rounded-full px-5 py-2">
+          <Link href="/blog" className=" font-medium">
+            Blogs
+          </Link>
+        </div>
       </div>
 
 
