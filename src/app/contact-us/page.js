@@ -124,7 +124,7 @@ export default function Page() {
         <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#0a4174] to-transparent opacity-20"></div>
       </section>
 
-      {/* Main Content Section */}
+     
       <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Left Column - Contact Info & Why Contact */}
@@ -162,7 +162,7 @@ export default function Page() {
               </div>
             </div>
 
-            {/* Why Contact Us */}
+       
             <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-6 border border-gray-200">
               <h3 className="text-lg font-bold text-gray-900 mb-4">How Can We Help?</h3>
               <ul className="space-y-3">
@@ -177,7 +177,7 @@ export default function Page() {
               </ul>
             </div>
 
-            {/* Quick Response Badge */}
+      
             <div className="bg-gradient-to-r from-[#0a4174] to-blue-600 rounded-2xl p-6 text-white text-center">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -191,7 +191,7 @@ export default function Page() {
             </div>
           </div>
 
-          {/* Right Column - Form */}
+         
           <div className="lg:col-span-2">
             <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg">
               <div className="mb-6">
@@ -206,7 +206,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Business Hours Section */}
+     
       <section className=" py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="bg-white rounded-2xl border border-gray-200 p-8">

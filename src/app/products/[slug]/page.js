@@ -200,7 +200,7 @@ export default function Page({ params }) {
             <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
               <h2 className="text-xl font-bold text-gray-900 mb-3">Product Description</h2>
               <p className="text-gray-700 leading-relaxed">
-                {product.description}
+                {product.short_description}
               </p>
             </div>
 
