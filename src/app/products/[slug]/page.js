@@ -149,8 +149,8 @@ export default function Page({ params }) {
               <div className="aspect-square relative">
                 <Image
                   src={product.image}
-                  alt={product.name}
-                  fill
+                    alt={product.name}
+                    fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute top-4 right-4 bg-[#0a4174] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">

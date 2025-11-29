@@ -14,7 +14,7 @@ export const blogData = [
     },
     date: "2025-11-28",
     readTime: "8 min read",
-    image: "/api/placeholder/800/600",
+    image: "/market.jpg",
     featured: true
   },
   {
@@ -99,7 +99,7 @@ export const blogData = [
     },
     date: "2025-11-10",
     readTime: "5 min read",
-    image: "/api/placeholder/800/600",
+    image: "/market.jpg",
     featured: false
   },
   {
@@ -252,7 +252,7 @@ export const blogData = [
     },
     date: "2025-10-05",
     readTime: "6 min read",
-    image: "/api/placeholder/800/600",
+    image: "/market.jpg",
     featured: false
   }
 ];
