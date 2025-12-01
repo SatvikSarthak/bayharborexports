@@ -31,7 +31,7 @@ export const blogData = [
     },
     date: "2025-11-25",
     readTime: "6 min read",
-    image: "/api/placeholder/800/600",
+    image: "/logistics11.png",
     featured: false
   },
   {
@@ -48,7 +48,7 @@ export const blogData = [
     },
     date: "2025-11-22",
     readTime: "5 min read",
-    image: "/api/placeholder/800/600",
+    image: "/spice.webp",
     featured: false
   },
   {
@@ -65,7 +65,7 @@ export const blogData = [
     },
     date: "2025-11-18",
     readTime: "7 min read",
-    image: "/api/placeholder/800/600",
+    image: "/industry.jpg",
     featured: false
   },
   {
@@ -82,7 +82,7 @@ export const blogData = [
     },
     date: "2025-11-15",
     readTime: "4 min read",
-    image: "/api/placeholder/800/600",
+    image: "/sus.jpg",
     featured: false
   },
   {
@@ -116,7 +116,7 @@ export const blogData = [
     },
     date: "2025-11-08",
     readTime: "6 min read",
-    image: "/api/placeholder/800/600",
+    image: "/industry.jpg",
     featured: false
   },
   {
@@ -133,7 +133,7 @@ export const blogData = [
     },
     date: "2025-11-05",
     readTime: "3 min read",
-    image: "/api/placeholder/800/600",
+    image: "/company.jpg",
     featured: true
   },
   {
@@ -150,7 +150,7 @@ export const blogData = [
     },
     date: "2025-11-01",
     readTime: "5 min read",
-    image: "/api/placeholder/800/600",
+    image: "/spice.webp",
     featured: false
   },
   {
@@ -167,7 +167,7 @@ export const blogData = [
     },
     date: "2025-10-28",
     readTime: "6 min read",
-    image: "/api/placeholder/800/600",
+    image: "/logistics11.png",
     featured: false
   },
   {
@@ -184,7 +184,7 @@ export const blogData = [
     },
     date: "2025-10-25",
     readTime: "8 min read",
-    image: "/api/placeholder/800/600",
+    image: "/industry.jpg",
     featured: false
   },
   {
@@ -201,7 +201,7 @@ export const blogData = [
     },
     date: "2025-10-20",
     readTime: "4 min read",
-    image: "/api/placeholder/800/600",
+    image: "/spice.webp",
     featured: false
   },
   {
@@ -218,7 +218,7 @@ export const blogData = [
     },
     date: "2025-10-15",
     readTime: "10 min read",
-    image: "/api/placeholder/800/600",
+    image: "/logistics11.png",
     featured: false
   },
   {
@@ -235,7 +235,7 @@ export const blogData = [
     },
     date: "2025-10-10",
     readTime: "4 min read",
-    image: "/api/placeholder/800/600",
+    image: "/company.jpg",
     featured: false
   },
   {

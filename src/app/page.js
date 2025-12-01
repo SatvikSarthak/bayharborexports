@@ -38,9 +38,9 @@ export default function HomePage() {
     <CompareDemo/>
 </ScrollReveal>
       {/* World Map */}
-      <ScrollReveal offset={150}>
+      {/* <ScrollReveal offset={150}>
         <WorldMapDemo />
-      </ScrollReveal>
+      </ScrollReveal> */}
     </div>
   );
 }

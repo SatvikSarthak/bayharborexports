@@ -69,7 +69,7 @@ export default function CompareDemo() {
               <div className="mt-6 mb-6">
                 <div className="relative h-40 rounded-xl overflow-hidden bg-gray-100">
                   <Image
-                    src="/rajma.png"
+                    src="/traditional.jpeg"
                     alt="Traditional Export"
                     fill
                     className="object-cover opacity-60"
@@ -98,7 +98,7 @@ export default function CompareDemo() {
               <div className="mt-6 mb-6">
                 <div className="relative h-40 rounded-xl overflow-hidden ring-2 ring-white/30">
                   <Image
-                    src="/nuts.png"
+                    src="/quality.png"
                     alt="Bayharbor Exports"
                     fill
                     className="object-cover"
