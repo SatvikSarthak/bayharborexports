@@ -1,0 +1,228 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { X, Send } from "lucide-react";
+
+export default function ContactPopup() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    country: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  useEffect(() => {
+    // Show popup after 2 seconds when page loads
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          country: "",
+          message: "",
+        });
+        setTimeout(() => {
+          setIsOpen(false);
+          setSubmitStatus(null);
+        }, 2000);
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 xs2:p-6">
+     
+      <div
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200"
+        onClick={handleClose}
+      ></div>
+
+      {/* Modal */}
+      <div className="relative bg-white rounded-xl xs2:rounded-2xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto animate-in zoom-in-95 duration-300">
+        {/* Close Button */}
+        <button
+          onClick={handleClose}
+          className="absolute top-3 xs2:top-4 right-3 xs2:right-4 text-gray-400 hover:text-gray-600 transition-colors z-10"
+          aria-label="Close"
+        >
+          <X className="w-5 h-5 xs2:w-6 xs2:h-6" />
+        </button>
+
+        {/* Header */}
+        <div className="bg-gradient-to-br from-[#0a4174] to-blue-600 text-white p-6 xs2:p-8 rounded-t-xl xs2:rounded-t-2xl">
+          <h2 className="text-xl xs2:text-2xl font-bold mb-2">Get in Touch</h2>
+          <p className="text-sm xs2:text-base text-blue-100">
+            Fill out the form below and we'll get back to you shortly
+          </p>
+        </div>
+
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="p-6 xs2:p-8 space-y-4 xs2:space-y-5">
+          {/* Name Field (Required) */}
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
+              Name <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full px-3 xs2:px-4 py-2 xs2:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0a4174] focus:border-transparent outline-none transition-all text-sm xs2:text-base"
+              placeholder="Your full name"
+            />
+          </div>
+
+          {/* Email Field (Required) */}
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
+              Email <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full px-3 xs2:px-4 py-2 xs2:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0a4174] focus:border-transparent outline-none transition-all text-sm xs2:text-base"
+              placeholder="your.email@example.com"
+            />
+          </div>
+
+          {/* Phone Field (Optional) */}
+          <div>
+            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1.5">
+              Phone
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              className="w-full px-3 xs2:px-4 py-2 xs2:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0a4174] focus:border-transparent outline-none transition-all text-sm xs2:text-base"
+              placeholder="+1 (555) 000-0000"
+            />
+          </div>
+
+          {/* Country Field (Optional) */}
+          <div>
+            <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-1.5">
+              Country
+            </label>
+            <input
+              type="text"
+              id="country"
+              name="country"
+              value={formData.country}
+              onChange={handleChange}
+              className="w-full px-3 xs2:px-4 py-2 xs2:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0a4174] focus:border-transparent outline-none transition-all text-sm xs2:text-base"
+              placeholder="Your country"
+            />
+          </div>
+
+          {/* Message Field (Optional) */}
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              rows="3"
+              className="w-full px-3 xs2:px-4 py-2 xs2:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0a4174] focus:border-transparent outline-none transition-all resize-none text-sm xs2:text-base"
+              placeholder="Tell us about your inquiry..."
+            ></textarea>
+          </div>
+
+          {/* Submit Status */}
+          {submitStatus === "success" && (
+            <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg text-sm">
+              Thank you! We'll be in touch soon.
+            </div>
+          )}
+
+          {submitStatus === "error" && (
+            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
+              Something went wrong. Please try again.
+            </div>
+          )}
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full bg-gradient-to-r from-[#0a4174] to-blue-600 text-white font-semibold py-2.5 xs2:py-3 px-6 rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-sm xs2:text-base"
+          >
+            {isSubmitting ? (
+              <>
+                <div className="w-4 h-4 xs2:w-5 xs2:h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                Sending...
+              </>
+            ) : (
+              <>
+                <Send className="w-4 h-4 xs2:w-5 xs2:h-5" />
+                Send Message
+              </>
+            )}
+          </button>
+
+          {/* Privacy Note */}
+          <p className="text-xs text-gray-500 text-center mt-3">
+            We respect your privacy. Your information will never be shared.
+          </p>
+        </form>
+      </div>
+    </div>
+  );
+}

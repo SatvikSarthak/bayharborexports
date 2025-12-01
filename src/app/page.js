@@ -8,10 +8,14 @@ import ExportJourney from "@/components/ExportJourney";
 import { WorldMapDemo } from "@/components/Map";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import CompareDemo from "@/components/CompareD";
+import ContactPopup from "@/components/ContactPopup";
 
 export default function HomePage() {
   return (
     <div className="min-h-screen">
+      {/* Contact Popup */}
+      <ContactPopup />
+
       {/* Hero Banner */}
       <HeroBanner />
 
