@@ -19,7 +19,7 @@ export default function Page({ params }) {
     .slice(0, 3);
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen ">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#0a4174] via-[#0d5490] to-[#1a6bb3] text-white py-20 px-6 overflow-hidden">
         <div className="absolute inset-0 opacity-10">

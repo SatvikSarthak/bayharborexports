@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
       <body className={`${montserrat.className} antialiased `}>
         <Navbar />
         <Suspense fallback={<Loading />}>
-          <main>{children}</main>
+          <main className="">{children}</main>
         </Suspense>
         <Footer />
         <FloatingContactButton />

@@ -170,7 +170,7 @@ export default function Page() {
               <div className="absolute inset-0 bg-gradient-to-br from-[#0a4174] via-[#0d5490] to-[#1a6bb3] flex items-center justify-center">
                 {/* Container Icon/Illustration */}
                 <div className="text-center text-white">
-                  <Image src="/cont1.jpeg" alt="Container Illustration" layout="fill" objectFit="cover" />
+                  <Image src="/cont1.png" alt="Container Illustration" layout="fill" objectFit="cover" />
                       </div>
               </div>
               {/* Decorative overlay */}
