@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import arrow1 from "/public/arrow1.png";
+//import arrow1 from "/arrow1.png";
 
 export default function AboutSection() {
   const [activeIndex, setActiveIndex] = useState(0);

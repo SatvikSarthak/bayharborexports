@@ -1,16 +1,16 @@
 import Image from "next/image";
-import product from "/public/product3.jpeg";
-import service from "/public/service2.jpeg"
+import product from "/product3.jpeg";
+import service from "/service2.jpeg"
 export default function ProdandServices() {
   return (
     <section className="py-12 ">
       <div className="max-w-6xl mx-auto text-center px-4">
-        {/* Heading */}
+        
         <h2 className="text-4xl text-center text-[#0a4174] font-bold py-8">What We Do</h2>
 
        
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {/* Spices */}
+
           <div className="rounded-lg shadow-md">
             <div className="relative w-full aspect-square">
               <Image
@@ -27,7 +27,7 @@ export default function ProdandServices() {
             </p>
           </div>
 
-          {/* Handicrafts */}
+     
           <div className="bg-white rounded-lg shadow-md p-4 ">
             <div className="relative w-full aspect-square">
               <Image

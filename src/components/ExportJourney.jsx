@@ -71,8 +71,8 @@ export default function ExportJourney() {
   ];
 
   return (
-    <section ref={targetRef} className="relative h-[200vh] w-full ">
-      <div className="sticky top-0 h-screen flex flex-col items-center justify-center px-4 py-16">
+    <section ref={targetRef} className="relative   w-full ">
+      <div className=" top-0   flex flex-col items-center justify-center px-4 py-16">
         {/* Heading */}
         <div className="text-center mb-12">
           <div className="inline-block mb-4">
@@ -131,7 +131,7 @@ export default function ExportJourney() {
         </div>
 
         {/* Cards */}
-        <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="w-full max-w-6xl  grid grid-cols-1 sm:grid-cols-4 gap-6">
           {steps.map((step, index) => (
             <motion.div
               key={step.id}

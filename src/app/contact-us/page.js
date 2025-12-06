@@ -1,6 +1,6 @@
 "use client";
 
-import Form from "/src/components/Form.jsx";
+import Form from "@/components/Form.jsx";
 
 export default function Page() {
   const handleFormSubmit = (data) => {
@@ -96,12 +96,12 @@ export default function Page() {
   ];
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white ">
       {/* Hero Section */}
-      <section className="relative bg-white py-20 px-6 overflow-hidden border-b border-gray-100">
+       {/* <section className="relative bg-white py-20 px-6 overflow-hidden border-b border-gray-100">
         <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-blue-50 to-transparent opacity-50"></div>
         
-        <div className="max-w-7xl mx-auto relative z-10">
+         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-6">
             <span className="inline-block px-4 py-1.5 bg-[#0a4174]/10 text-[#0a4174] rounded-full text-sm font-medium">
               Contact Us
@@ -119,24 +119,24 @@ export default function Page() {
           <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto leading-relaxed">
             We&apos;re here to answer your questions, discuss your shipments, and help you find the best solutions for your export needs. Reach out to us, and let&apos;s start building something great.
           </p>
-        </div>
+        </div> 
 
         <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#0a4174] to-transparent opacity-20"></div>
-      </section>
+      </section> */}
 
      
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-3 gap-12">
-          {/* Left Column - Contact Info & Why Contact */}
-          <div className="lg:col-span-1 space-y-8">
+      <section className="max-w-7xl xl:ml-24 mx-auto 2xl:ml-48 xxxs:px-2 xxs:ml-8 md:px-3 sm:px-12 md2:mr-0 md2:ml-8 lg2:ml-16 md3:ml-0 sm:w-full py-20">
+        <div className="grid md:grid-cols-3 gap-12   md:space-x-10 md2:space-x-24 lg2:space-x-16 ">
+         
+          <div className="md:col-span-1 space-y-8 ">
             {/* Contact Information Cards */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h2>
+              <h2 className="xs:text-2xl xxxs:text-xl  sm:text-3xl font-bold text-gray-900 mb-6">Contact Information</h2>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
                   <div 
                     key={index}
-                    className="group bg-white border border-gray-200 rounded-xl p-5 hover:border-[#0a4174] hover:shadow-lg transition-all duration-300"
+                    className="group  xs2:mr-0 xxxs:w-[300px] sm:w-[450px] md2:w-[350px] lg:w-[350px] md:w-[290px]  bg-white border border-gray-200 rounded-xl p-5 hover:border-[#0a4174] hover:shadow-lg transition-all duration-300"
                   >
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-gradient-to-br from-[#0a4174] to-blue-600 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
@@ -163,7 +163,7 @@ export default function Page() {
             </div>
 
        
-            <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-6 border border-gray-200">
+            <div className="bg-gradient-to-br  from-gray-50 to-blue-50 lg:w-[350px] xxxs:w-[300px] sm:w-[450px]  md:w-[290px]  rounded-2xl p-6 border border-gray-200">
               <h3 className="text-lg font-bold text-gray-900 mb-4">How Can We Help?</h3>
               <ul className="space-y-3">
                 {whyContact.map((item, index) => (
@@ -178,7 +178,7 @@ export default function Page() {
             </div>
 
       
-            <div className="bg-gradient-to-r from-[#0a4174] to-blue-600 rounded-2xl p-6 text-white text-center">
+            <div className="bg-gradient-to-r from-[#0a4174] to-blue-600 w-auto xxxs:w-[300px] sm:w-[450px]  md:w-[290px]  lg:w-[350px]   rounded-2xl p-6 text-white text-center">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -192,10 +192,10 @@ export default function Page() {
           </div>
 
          
-          <div className="lg:col-span-2">
-            <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg">
+          <div className="md:col-span-2 xxxs:w-[300px] md:w-[350px] sm:w-[450px]  lg:w-[550px]  ">
+            <div className="bg-white border  border-gray-200 rounded-2xl p-8 shadow-lg">
               <div className="mb-6">
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Send Us a Message</h2>
+                <h2 className="sm:text-3xl xxxs:text-xl font-bold text-gray-900 mb-2">Send Us a Message</h2>
                 <p className="text-gray-600">
                   Fill out the form below and we&apos;ll get back to you as soon as possible
                 </p>
@@ -216,11 +216,11 @@ export default function Page() {
                 <div className="space-y-3">
                   <div className="flex justify-between items-center py-2 border-b border-gray-100">
                     <span className="text-gray-700 font-medium">Monday - Friday</span>
-                    <span className="text-[#0a4174] font-semibold">9:00 AM - 6:00 PM</span>
+                    <span className="text-[#0a4174] xxxs:text-xs xs:text-sm  font-semibold">9:00 AM - 6:00 PM</span>
                   </div>
                   <div className="flex justify-between items-center py-2 border-b border-gray-100">
                     <span className="text-gray-700 font-medium">Saturday</span>
-                    <span className="text-[#0a4174] font-semibold">9:00 AM - 2:00 PM</span>
+                    <span className="text-[#0a4174] xxxs:text-xs xs:text-sm  font-semibold">9:00 AM - 2:00 PM</span>
                   </div>
                   <div className="flex justify-between items-center py-2">
                     <span className="text-gray-700 font-medium">Sunday</span>

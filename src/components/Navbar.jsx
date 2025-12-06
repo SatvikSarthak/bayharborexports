@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "/public/logo.png";
-import arrow1 from "/public/arrow1.png";
-import arrow2 from "/public/arrow2.png";
+//import logo from "/logo.png";
+//import arrow1 from "/arrow1.png";
+//import arrow2 from "/arrow2.png";
 import { useState } from "react";
 import { productsData } from "../data/productsData";
 import { useRouter } from "next/navigation";
@@ -16,19 +16,19 @@ export default function Navbar() {
   const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
   const router = useRouter();
   
-  // Get unique categories from products data
+  
   const categories = [...new Set(productsData.map((p) => p.category))];
   
   return (
     <nav className="w-full flex fixed items-center justify-between px-6 py-2 bg-white shadow-sm z-20">
-      <div className="flex w-[300px] flex-shrink-0 h-[80px] items-center">
+      <div className="flex w-[300px] xxxs:w-[200px] xs:w-[300px] flex-shrink-0 h-[80px] items-center">
         <Link href="/">
-          <Image src={Logo} className="" alt="logo" />
+          <Image src="/logo.png" className="" width={200}  height={150} alt="logo" />
         </Link>
       </div>
 
       {/* Desktop Menu */}
-      <div className="hidden lg:flex items-center border py-1.5 border-gray-200 text-black rounded-full px-4 space-x-3">
+      <div className="hidden lg4:flex items-center border py-1.5 border-gray-200 text-black rounded-full px-4 space-x-3">
         <div 
           className="relative group"
           onMouseEnter={() => setShowProductDropdown(true)}
@@ -93,7 +93,7 @@ export default function Navbar() {
         onMouseEnter={() => setIsGetInTouchHovered(true)}
         onMouseLeave={() => setIsGetInTouchHovered(false)}
         onClick={() => router.push('/contact-us')}
-        className="hidden lg:flex items-center hover:scale-105 bg-gradient-to-r from-[#0a4174] to-blue-600 text-white border border-gray-300 hover:text-white rounded-full px-5 py-2 space-x-2 transition"
+        className="hidden lg4:flex items-center hover:scale-105 bg-gradient-to-r from-[#0a4174] to-blue-600 text-white border border-gray-300 hover:text-white rounded-full px-5 py-2 space-x-2 transition"
       >
         <span className="font-medium">Get in Touch</span>
         <div className="w-7 h-7 border rounded-full p-1 flex items-center justify-center transition-all duration-300 overflow-hidden">
@@ -103,8 +103,9 @@ export default function Navbar() {
             </svg>
           ) : (
             <Image
-              src={arrow2}
+              src="/arrow2.png"
               alt="upright arrow"
+             width={6} height={6}
               className="w-full h-full object-contain transition-all duration-300"
             />
           )}
@@ -114,7 +115,8 @@ export default function Navbar() {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="lg:hidden flex items-center justify-center w-10 h-10 text-gray-700 hover:text-[#0a4174] transition-colors"
+        className="lg4:hidden flex items-center 
+         justify-center w-10 h-10 text-gray-700 hover:text-[#0a4174] transition-colors"
       >
         {isMobileMenuOpen ? (
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

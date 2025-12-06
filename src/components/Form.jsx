@@ -126,8 +126,8 @@ Message: ${data.message || "N/A"}
   };
 
   return (
-    <div className="bg-gray-50 rounded-2xl p-8 w-full max-w-xl shadow-lg">
-      <h2 className="text-3xl font-bold text-gray-800 pb-8 text-center">
+    <div className="bg-gray-50 rounded-2xl sm:p-1 xxxs:p-3 sm:w-full max-w-xl shadow-lg">
+      <h2 className="sm:text-3xl xxxs:text-xl font-bold text-gray-800 pb-8 text-center">
         Let&#39;s Talk About Your Project
       </h2>
 
@@ -144,7 +144,7 @@ Message: ${data.message || "N/A"}
             onChange={handleChange}
             placeholder="Your full name"
             required
-            className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+            className="w-full px-4 xxxs:placeholder:text-sm sm:placeholder:text-base  py-3 border border-gray-200 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
           />
         </div>
 
@@ -160,7 +160,7 @@ Message: ${data.message || "N/A"}
             onChange={handleChange}
             placeholder="We'll get back to you here"
             required
-            className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+            className="w-full px-4 py-3 border xxxs:placeholder:text-sm sm:placeholder:text-base border-gray-200 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
           />
         </div>
 
@@ -175,7 +175,7 @@ Message: ${data.message || "N/A"}
             value={formData.company}
             onChange={handleChange}
             placeholder="Let us know who you represent"
-            className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+            className="w-full px-4 py-3 border border-gray-200  xxxs:placeholder:text-sm sm:placeholder:text-base rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
           />
         </div>
 
@@ -188,7 +188,7 @@ Message: ${data.message || "N/A"}
             <select
               value={formData.countryCode}
               onChange={handleCountryCodeChange}
-              className="px-3 py-3 border border-gray-200 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 cursor-pointer"
+              className="px-3 py-3  border xxxs:px-1 xxxs:py-1 xxxs:placeholder:text-sm sm:placeholder:text-base border-gray-200 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 cursor-pointer"
             >
               {countryCodes.map((item) => (
                 <option key={item.code} value={item.code}>
@@ -203,7 +203,7 @@ Message: ${data.message || "N/A"}
               onChange={handlePhoneChange}
               placeholder="Enter phone number"
               required
-              className="flex-1 px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+              className="flex-1 xxxs:w-[100px] md:w-[70px] sm:w-auto xxxs:placeholder:text-sm sm:placeholder:text-base  px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
             />
           </div>
         </div>
@@ -218,7 +218,7 @@ Message: ${data.message || "N/A"}
             onChange={handleChange}
             placeholder="Your message (optional)"
             rows={4}
-            className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+            className="w-full px-4 py-3 border xxxs:placeholder:text-sm sm:placeholder:text-base border-gray-200 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
           ></textarea>
         </div>
         <div className="pt-4">

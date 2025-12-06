@@ -19,7 +19,7 @@ export default function CompareDemo() {
   ];
 
   return (
-    <section className="py-20 px-6 ">
+    <section className="py-20 xxxs:px-2 xs2:px-6  ">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Bold Text */}
@@ -28,7 +28,7 @@ export default function CompareDemo() {
               The Bayharbor Difference
             </div>
             
-            <h2 className="text-5xl md:text-6xl font-extrabold leading-tight">
+            <h2 className="text-5xl md:text-6xl xxxs:text-3xl font-extrabold leading-tight">
               <span className="text-gray-900">Why Choose</span>
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0a4174] via-blue-600 to-[#0a4174] animate-gradient bg-300%">
@@ -40,28 +40,28 @@ export default function CompareDemo() {
               Experience the next generation of export excellence. We've reimagined every step of the export process to deliver unmatched quality, transparency, and reliability.
             </p>
 
-            <div className="flex items-center gap-4 pt-4">
+            <div className="flex items-center gap-4 xxxs:gap-2  xs:gap-4 pt-4">
               <div className="text-center">
-                <div className="text-4xl font-bold text-[#0a4174]">50+</div>
-                <div className="text-sm text-gray-600">Countries</div>
+                <div className="text-4xl xxs:text-3xl font-bold text-[#0a4174]">50+</div>
+                <div className="text-sm   text-gray-600">Countries</div>
               </div>
               <div className="h-12 w-px bg-gray-300"></div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-[#0a4174]">1000+</div>
-                <div className="text-sm text-gray-600">Shipments</div>
+                <div className="text-4xl xxs:text-3xl font-bold text-[#0a4174]">1000+</div>
+                <div className="text-sm  text-gray-600">Shipments</div>
               </div>
               <div className="h-12 w-px bg-gray-300"></div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-[#0a4174]">100%</div>
-                <div className="text-sm text-gray-600">Success Rate</div>
+                <div className="text-4xl xxs:text-3xl   font-bold text-[#0a4174]">100%</div>
+                <div className="text-sm   text-gray-600">Success Rate</div>
               </div>
             </div>
           </div>
 
-          {/* Right Side - Comparison */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Traditional Export */}
-            <div className="group relative bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-gray-300 transition-all duration-300">
+
+          <div className="grid sm:grid-cols-2 gap-6 xxs:gap-6  xxxs:gap-0">
+ 
+            <div className="group xxxs:w-[250px] xxxs:ml-4 w-400px  xs3:w-[400px] xxxs:mb-6 xs:w-[300px] relative bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-gray-300 transition-all duration-300">
               <div className="absolute -top-3 left-6 bg-gray-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
                 Traditional Export
               </div>
@@ -90,7 +90,7 @@ export default function CompareDemo() {
             </div>
 
             {/* Bayharbor Export */}
-            <div className="group relative bg-gradient-to-br from-[#0a4174] to-blue-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02]">
+            <div className="group  xxxs:w-[250px]  xxxs:ml-4 xxxs:mb-6 xs:w-[300px] relative bg-gradient-to-br from-[#0a4174] to-blue-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02]">
               <div className="absolute -top-3 left-6 bg-gradient-to-r from-slate-100 to-slate-200 text-[#0a4174] px-4 py-1 rounded-full text-sm font-bold shadow-md border border-slate-300">
                 Bayharbor Exports 
               </div>
@@ -123,3 +123,4 @@ export default function CompareDemo() {
     </section>
   );
 }
+ 

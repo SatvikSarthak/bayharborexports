@@ -112,7 +112,7 @@ export default function StatsCounter() {
               }}
             >
               {/* Count */}
-              <div className="text-5xl font-bold text-[#0a4174] mb-2 transition-all duration-300">
+              <div className="text-7xl xxxs:text-2xl  xxs:text-4xl sm:text-5xl font-bold text-[#0a4174] mb-2 transition-all duration-300">
                 {stat.count}
               </div>
 

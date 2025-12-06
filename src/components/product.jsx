@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "/public/example.jpg";
+//import logo from "/example.jpg";
 
 export default function 
 Product({ product }) {
@@ -11,12 +11,12 @@ Product({ product }) {
   }
 
   return (
-    <div className="flex flex-col bg-white rounded-lg shadow-lg max-w-[300px]  min-h-[150px]  border-gray-200  border-[2px]  hover:shadow-xl transition-shadow duration-300">
+    <div className="flex flex-col xxxs:mt-6 lg:mt-0 bg-white rounded-lg shadow-lg xxxs:w-[250px] md:w-[300px] lg4:w-[300px]  min-h-[150px]  border-gray-200  border-[2px]  hover:shadow-xl transition-shadow duration-300">
       
       <div className="mb-3 flex justify-center">
         <Image
           className="w-full h-48 object-cover rounded-md"
-          src={product.image || logo}
+          src={product.image}
           alt={product.name || "Product"}
           width={300}
           height={200}
@@ -24,7 +24,7 @@ Product({ product }) {
       </div>
       <div className="flex flex-col space-y-3 p-4">
         <Link href={`/products/${product.slug}`}>
-          <h3 className="text-xl font-semibold text-gray-800 text-center hover:text-[#0a4174] transition-colors duration-300 cursor-pointer">
+          <h3 className="text-xl font-semibold  text-gray-800 text-center hover:text-[#0a4174] transition-colors duration-300 cursor-pointer">
             {product.name}
           </h3>
         </Link>
