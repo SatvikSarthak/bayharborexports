@@ -26,9 +26,9 @@ export default function Page() {
         </svg>
       ),
       title: "Call Us",
-      details: "+91 XXXX XXXXXX",
+      details: "+91 8800826659",
       subtext: "Mon-Sat, 9AM to 6PM IST",
-      link: "tel:+91XXXXXXXXXX"
+      link: "tel:+918800826659"
     },
     {
       icon: (

@@ -14,17 +14,17 @@ export default function Footer() {
           
           {/* Company Info */}
           <div className="space-y-3 xs2:space-y-4">
-            <div className="w-36 xs2:w-40 h-10 xs2:h-12 relative">
+            <div className="w-36  xs2:w-40  h-[40px] relative">
               <Link href="/">
                 <Image 
                   src="/logo.png"
                   alt="BayHarbor Exports Logo" 
-                  className="object-contain"
+                  className="object-contain h-full w-full"
                   fill
                 />
               </Link>
             </div>
-            <p className="text-xs xs2:text-sm text-gray-600 leading-relaxed">
+            <p className="text-sm xs2:text-sm text-gray-600 leading-relaxed">
               Your trusted partner in global export solutions, delivering quality products worldwide.
             </p>
             
@@ -83,41 +83,41 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-3 xs2:space-y-4">
-            <h3 className="text-sm xs2:text-base font-bold text-gray-900">
+            <h3 className="text-base xs2:text-base font-bold text-gray-900">
               Quick Links
             </h3>
             <nav className="flex flex-col space-y-2">
               <Link
                 href="/"
-                className="text-xs xs2:text-sm text-gray-600 hover:text-[#0a4174] hover:translate-x-1 transition-all duration-200 flex items-center gap-2"
+                className="text-sm xs2:text-sm text-gray-600 hover:text-[#0a4174] hover:translate-x-1 transition-all duration-200 flex items-center gap-2"
               >
                 <span className="w-1 h-1 bg-[#0a4174] rounded-full"></span>
                 Home
               </Link>
               <Link
                 href="/about"
-                className="text-xs xs2:text-sm text-gray-600 hover:text-[#0a4174] hover:translate-x-1 transition-all duration-200 flex items-center gap-2"
+                className="text-sm xs2:text-sm text-gray-600 hover:text-[#0a4174] hover:translate-x-1 transition-all duration-200 flex items-center gap-2"
               >
                 <span className="w-1 h-1 bg-[#0a4174] rounded-full"></span>
                 About Us
               </Link>
               <Link
                 href="/products"
-                className="text-xs xs2:text-sm text-gray-600 hover:text-[#0a4174] hover:translate-x-1 transition-all duration-200 flex items-center gap-2"
+                className="text-sm xs2:text-sm text-gray-600 hover:text-[#0a4174] hover:translate-x-1 transition-all duration-200 flex items-center gap-2"
               >
                 <span className="w-1 h-1 bg-[#0a4174] rounded-full"></span>
                 Products
               </Link>
               <Link
                 href="/services"
-                className="text-xs xs2:text-sm text-gray-600 hover:text-[#0a4174] hover:translate-x-1 transition-all duration-200 flex items-center gap-2"
+                className="text-sm xs2:text-sm text-gray-600 hover:text-[#0a4174] hover:translate-x-1 transition-all duration-200 flex items-center gap-2"
               >
                 <span className="w-1 h-1 bg-[#0a4174] rounded-full"></span>
                 Services
               </Link>
               <Link
                 href="/blog"
-                className="text-xs xs2:text-sm text-gray-600 hover:text-[#0a4174] hover:translate-x-1 transition-all duration-200 flex items-center gap-2"
+                className="text-sm xs2:text-sm text-gray-600 hover:text-[#0a4174] hover:translate-x-1 transition-all duration-200 flex items-center gap-2"
               >
                 <span className="w-1 h-1 bg-[#0a4174] rounded-full"></span>
                 Blog
@@ -127,25 +127,25 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="space-y-3 xs2:space-y-4">
-            <h3 className="text-sm xs2:text-base font-bold text-gray-900">
+            <h3 className="text-base xs2:text-base font-bold text-gray-900">
               Contact Us
             </h3>
             <div className="flex flex-col space-y-2 xs2:space-y-2.5">
               <a
                 href="mailto:bayharborexports@gmail.com"
-                className="flex items-start gap-2 text-xs xs2:text-sm text-gray-600 hover:text-[#0a4174] transition-colors group"
+                className="flex items-start gap-2 text-sm xs2:text-sm text-gray-600 hover:text-[#0a4174] transition-colors group"
               >
                 <Mail className="w-3.5 h-3.5 xs2:w-4 xs2:h-4 mt-0.5 text-[#0a4174] group-hover:scale-110 transition-transform flex-shrink-0" />
-                <span className="break-all">bayharborexports@gmail.com</span>
+                <span className="break-all">info@bayharborexports.com</span>
               </a>
               <a
-                href="tel:111111111"
-                className="flex items-center gap-2 text-xs xs2:text-sm text-gray-600 hover:text-[#0a4174] transition-colors group"
+                href="tel:8800826659"
+                className="flex items-center gap-2 text-sm xs2:text-sm text-gray-600 hover:text-[#0a4174] transition-colors group"
               >
                 <Phone className="w-3.5 h-3.5 xs2:w-4 xs2:h-4 text-[#0a4174] group-hover:scale-110 transition-transform flex-shrink-0" />
-                <span>+91 111111111</span>
+                <span>+91 8800826659</span>
               </a>
-              <div className="flex items-start gap-2 text-xs xs2:text-sm text-gray-600">
+              <div className="flex items-start gap-2 text-sm xs2:text-sm text-gray-600">
                 <MapPin className="w-3.5 h-3.5 xs2:w-4 xs2:h-4 mt-0.5 text-[#0a4174] flex-shrink-0" />
                 <span>Lucknow, Uttar Pradesh, India</span>
               </div>
@@ -154,10 +154,10 @@ export default function Footer() {
 
           {/* CTA Section */}
           <div className="space-y-3 xs2:space-y-4">
-            <h3 className="text-sm xs2:text-base font-bold text-gray-900">
+            <h3 className="text-base xs2:text-base font-bold text-gray-900">
               Get in Touch
             </h3>
-            <p className="text-xs xs2:text-sm text-gray-600 leading-relaxed">
+            <p className="text-sm xs2:text-sm text-gray-600 leading-relaxed">
               Ready to start your export journey? Contact us today.
             </p>
             <Link

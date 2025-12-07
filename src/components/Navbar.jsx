@@ -20,10 +20,10 @@ export default function Navbar() {
   const categories = [...new Set(productsData.map((p) => p.category))];
   
   return (
-    <nav className="w-full flex fixed items-center justify-between px-6 py-2 bg-white shadow-sm z-20">
-      <div className="flex w-[300px] xxxs:w-[200px] xs:w-[300px] flex-shrink-0 h-[80px] items-center">
+    <nav className="w-full flex fixed items-center justify-between px-6 py-2  bg-white shadow-sm z-20">
+      <div className="flex lg4:w-[300px]  xxxs:w-[200px] h-[100px] xs:w-[300px] flex-shrink-0  items-center">
         <Link href="/">
-          <Image src="/logo.png" className="" width={200}  height={150} alt="logo" />
+          <Image src="/logo.png" className="w-[200px] z-30 h-full " width={400} height={200}  alt="logo" />
         </Link>
       </div>
 
