@@ -21,9 +21,9 @@ export default function Navbar() {
   
   return (
     <nav className="w-full flex fixed items-center justify-between px-6 py-2  bg-white shadow-sm z-20">
-      <div className="flex lg4:w-[300px]  xxxs:w-[200px] h-[100px] xs:w-[300px] flex-shrink-0  items-center">
+      <div className="flex lg4:w-[300px]  xxxs:w-[200px] h-[80px] xs:w-[300px] flex-shrink-0  items-center">
         <Link href="/">
-          <Image src="/logo.png" className="w-[200px] z-30 h-full " width={400} height={200}  alt="logo" />
+          <Image src="/color_land_t.svg" className="w-[200px] z-30 h-full " width={400} height={200}  alt="logo" />
         </Link>
       </div>
 
@@ -131,7 +131,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-[96px] bg-black/50 backdrop-blur-sm z-40" onClick={() => setIsMobileMenuOpen(false)}>
+        <div className="lg4:hidden fixed inset-0 top-[96px] bg-black/50 backdrop-blur-sm z-40" onClick={() => setIsMobileMenuOpen(false)}>
           <div className="bg-white w-full max-w-sm ml-auto h-full shadow-2xl" onClick={(e) => e.stopPropagation()}>
             <div className="flex flex-col p-6 space-y-2">
               {/* Products with Dropdown */}

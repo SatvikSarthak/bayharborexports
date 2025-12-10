@@ -15,9 +15,9 @@ export default function Page() {
         </svg>
       ),
       title: "Email Us",
-      details: "info@bayharborexports.com",
+      details: "Info@bayharborexports.com",
       subtext: "We'll respond within 24 hours",
-      link: "mailto:info@bayharborexports.com"
+      link: "mailto:Info@bayharborexports.com"
     },
     {
       icon: (

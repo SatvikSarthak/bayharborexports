@@ -11,7 +11,7 @@ Product({ product }) {
   }
 
   return (
-    <div className="flex flex-col xxxs:mt-6 lg:mt-0 bg-white rounded-lg shadow-lg xxxs:w-[250px] md:w-[300px] lg4:w-[300px]  min-h-[150px]  border-gray-200  border-[2px]  hover:shadow-xl transition-shadow duration-300">
+    <div className="flex flex-col xxxs:mt-6 lg:mt-0 bg-white rounded-lg shadow-lg xxxs:w-[250px] md:w-[300px] lg4:w-[300px] lg2:w-[250px]  min-h-[150px]  border-gray-200  border-[2px]  hover:shadow-xl transition-shadow duration-300">
       
       <div className="mb-3 flex justify-center">
         <Image

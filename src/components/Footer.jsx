@@ -10,16 +10,16 @@ export default function Footer() {
     <footer className="bg-white border-t border-gray-200">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 xs2:px-6 py-6 xs2:py-8 md:py-10">
-        <div className="grid grid-cols-1 sm2:grid-cols-2 lg2:grid-cols-4 gap-6 xs2:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 sm2:grid-cols-2 md:grid-cols-4 lg2:grid-cols-4 gap-6 md:gap-3 xs2:gap-8">
           
           {/* Company Info */}
           <div className="space-y-3 xs2:space-y-4">
-            <div className="w-36  xs2:w-40  h-[40px] relative">
+            <div className="w-36 md:w-[150px] md2:w-[200px] xl:w-[250px] xs2:w-40  h-[80px] relative">
               <Link href="/">
                 <Image 
                   src="/logo.png"
                   alt="BayHarbor Exports Logo" 
-                  className="object-contain h-full w-full"
+                  className="object-contain h-full  w-full"
                   fill
                 />
               </Link>
@@ -28,7 +28,7 @@ export default function Footer() {
               Your trusted partner in global export solutions, delivering quality products worldwide.
             </p>
             
-            {/* Social Media Links */}
+          
             <div className="flex items-center gap-2 xs2:gap-3">
               <a
                 href="https://instagram.com"
@@ -126,7 +126,7 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-3 xs2:space-y-4">
+          <div className="space-y-3 xs2:space-y-4 md:-ml-12 ">
             <h3 className="text-base xs2:text-base font-bold text-gray-900">
               Contact Us
             </h3>
@@ -136,7 +136,7 @@ export default function Footer() {
                 className="flex items-start gap-2 text-sm xs2:text-sm text-gray-600 hover:text-[#0a4174] transition-colors group"
               >
                 <Mail className="w-3.5 h-3.5 xs2:w-4 xs2:h-4 mt-0.5 text-[#0a4174] group-hover:scale-110 transition-transform flex-shrink-0" />
-                <span className="break-all">info@bayharborexports.com</span>
+                <span className="break-all">Info@bayharborexports.com</span>
               </a>
               <a
                 href="tel:8800826659"
