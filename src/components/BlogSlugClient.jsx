@@ -6,6 +6,38 @@ import Image from "next/image";
 import { blogData } from "@/data/blogData";
 import { notFound } from "next/navigation";
 
+// Function to convert markdown-style content to HTML
+function formatContent(content) {
+  if (!content) return "";
+  
+  let formatted = content
+  
+    .replace(/###\s+(.+)/g, '<h3 class="text-4xl font-bold text-gray-900 mt-10 mb-5 leading-tight">$1</h3>')
+    
+    .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-gray-900">$1</strong>')
+    
+    .split('\n\n')
+    .map(para => {
+      if (para.trim().startsWith('<h3') || para.trim().startsWith('---')) {
+        return para;
+      }
+      if (para.trim().startsWith('-')) {
+     
+        const items = para.split('\n').filter(line => line.trim());
+        return '<ul class="list-disc list-inside space-y-3 my-6 ml-4">' + 
+          items.map(item => `<li class="text-base text-gray-700 leading-relaxed">${item.replace(/^-\s*/, '')}</li>`).join('') +
+          '</ul>';
+      }
+      return para.trim() ? `<p class="text-base text-gray-700 leading-relaxed mb-6">${para}</p>` : '';
+    })
+    .join('');
+  
+  // Handle separators
+  formatted = formatted.replace(/---/g, '<hr class="my-8 border-gray-300" />');
+  
+  return formatted;
+}
+
 export default function Page({ slug }) {
   
   const blog = blogData.find((b) => b.slug === slug);
@@ -103,48 +135,10 @@ export default function Page({ slug }) {
         </div>
 
         {/* Article Content */}
-        <div className="prose prose-lg max-w-none">
-          <div className="space-y-6 text-gray-700 leading-relaxed">
-            <p className="text-lg">
-              {blog.content}
-            </p>
-
-            {/* Sample Content Structure */}
-            <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-4">Introduction</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-
-            <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-4">Key Insights</h2>
-            <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-
-            <div className="bg-gradient-to-r from-[#0a4174] to-blue-600 text-white p-8 rounded-2xl my-8">
-              <h3 className="text-2xl font-bold mb-3">💡 Pro Tip</h3>
-              <p className="text-blue-100">
-                This is a highlighted callout section that can be used to emphasize important points or tips throughout the article.
-              </p>
-            </div>
-
-            <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-4">Detailed Analysis</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-
-            <ul className="list-disc list-inside space-y-2 my-6">
-              <li>First key point about the topic</li>
-              <li>Second important consideration</li>
-              <li>Third critical insight</li>
-              <li>Fourth essential element</li>
-            </ul>
-
-            <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-4">Conclusion</h2>
-            <p>
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
-            </p>
-          </div>
-        </div>
+        <div 
+          className="prose prose-lg max-w-none"
+          dangerouslySetInnerHTML={{ __html: formatContent(blog.content) }}
+        ></div>
 
         {/* Tags */}
         <div className="mt-12 pt-8 border-t border-gray-200">
