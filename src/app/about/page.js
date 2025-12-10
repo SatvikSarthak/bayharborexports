@@ -1,7 +1,7 @@
 import About from "@/components/AboutClient";
 
 export const metadata ={
-  title:"About Us - Bayharbor Exports",
+  title:"About Us ",
   description: "Learn about Bayharbor's mission, expertise, and global export solutions.",
 }
 

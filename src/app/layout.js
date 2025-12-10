@@ -13,8 +13,17 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "BayHarbor Exports – Trusted Indian Exporter of Quality Goods & Products Worldwide",
+  title:{
+   default: "BayHarbor Exports – Trusted Indian Exporter of Quality Goods & Products Worldwide",
+   template:"%s | Bayharbor Exports",
+  },
   description: "BayHarbor Exports is a leading Indian exporter of high-quality products. We offer top-grade, ISO-certified goods with reliable logistics and global shipping to over 50 countries. Partner with us for your export needs!",
+  keywords:["Indian exporters", "wholesale supplier India", "global sourcing","B2B trade India",
+"bulk export products", "Indian spices exporter", "agro exporter India",
+"industrial materials exporter", "natural stones India","Bayharbor Exports"
+],
+
+
 };
 
 export default function RootLayout({ children }) {

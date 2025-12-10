@@ -9,12 +9,12 @@ export async function generateMetadata({params}){
 
   if(!product){
     return {
-      title:"Product Not Found - Bayharbor Exports"
+      title:"Product Not Found "
     }
   }
 
   return {
-    title:`${product.name} - Bayharbor Exports`,
+    title:`${product.name}`,
     description:`${product.description} - Bayharbor Exports`
   }
 }

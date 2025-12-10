@@ -9,12 +9,12 @@ export async function generateMetadata({params}){
 
   if(!blogData){
     return{
-      title: "Blog Not Found - Bayharbor Exports",
+      title: "Blog Not Found ",
       description:"The requested blog post does not exist."
     }
   }
   return {
-    title:`${blogPost.title}- Bayharbor Exports`,
+    title:`${blogPost.title}`,
     description:
       blogPost.excerpt ||
       `Read expert insights on ${blogPost.title} from Bayharbor Exports.`,
