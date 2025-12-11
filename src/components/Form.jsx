@@ -83,47 +83,71 @@ Message: ${data.message || "N/A"}
     window.URL.revokeObjectURL(url);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus(null);
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitStatus(null);
 
-    if (!formData.name || !formData.email || !formData.phone) {
-      setSubmitStatus("error");
-      setIsSubmitting(false);
-      return;
-    }
+  if (!formData.name || !formData.email || !formData.phone) {
+    setSubmitStatus("error");
+    setIsSubmitting(false);
+    return;
+  }
 
-    try {
-      saveToFile(formData);
+  try {
+    // Prepare data for FormSubmit
+    const fullPhone = `${formData.countryCode} ${formData.phone}`;
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      company: formData.company,
+      phone: fullPhone,
+      message: formData.message,
+      _captcha: "false",
+      _next: "https://bayharborexports.com/thank-you", 
+    };
 
-      setSubmitStatus("success");
-
-      if (onSubmitSuccess) {
-        onSubmitSuccess({
-          ...formData,
-          fullPhone: `${formData.countryCode} ${formData.phone}`,
-        });
+ 
+    const response = await fetch(
+      "https://formsubmit.co/ajax/Info@bayharborexports.com",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       }
+    );
 
-      // Reset the form on success
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        phone: "",
-        message: "",
-        countryCode: "+91",
+    if (!response.ok) throw new Error("Network response was not ok");
+
+    setSubmitStatus("success");
+
+    if (onSubmitSuccess) {
+      onSubmitSuccess({
+        ...formData,
+        fullPhone,
       });
-
-      console.log("Form submitted successfully");
-    } catch (error) {
-      console.error("Error saving form:", error);
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
     }
-  };
+
+
+    setFormData({
+      name: "",
+      email: "",
+      company: "",
+      phone: "",
+      message: "",
+      countryCode: "+91",
+    });
+
+    console.log("Message sent successfully!");
+  } catch (error) {
+    console.error("Form submission error:", error);
+    setSubmitStatus("error");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <div className="bg-gray-50 rounded-2xl sm:p-1 xxxs:p-3 sm:w-full max-w-xl shadow-lg">

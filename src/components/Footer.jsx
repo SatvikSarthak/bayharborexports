@@ -8,11 +8,10 @@ export default function Footer() {
 
   return (
     <footer className="bg-white border-t border-gray-200">
-      {/* Main Footer Content */}
+    
       <div className="max-w-7xl mx-auto px-4 xs2:px-6 py-6 xs2:py-8 md:py-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 sm2:grid-cols-2 md:grid-cols-4 lg2:grid-cols-4 gap-6 md:gap-3 xs2:gap-8">
           
-          {/* Company Info */}
           <div className="space-y-3 xs2:space-y-4">
             <div className="w-36 md:w-[150px] md2:w-[200px] xl:w-[250px] xs2:w-40  h-[80px] relative">
               <Link href="/">
@@ -31,7 +30,7 @@ export default function Footer() {
           
             <div className="flex items-center gap-2 xs2:gap-3">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/bayharborex?igsh=MXgwNjJydXh5cThwZQ=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 xs2:w-9 xs2:h-9 bg-gray-100 hover:bg-gradient-to-r hover:from-[#0a4174] hover:to-blue-600 text-gray-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
@@ -47,7 +46,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/bayharbor-exports-india/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 xs2:w-9 xs2:h-9 bg-gray-100 hover:bg-gradient-to-r hover:from-[#0a4174] hover:to-blue-600 text-gray-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
@@ -81,7 +80,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+        
           <div className="space-y-3 xs2:space-y-4">
             <h3 className="text-base xs2:text-base font-bold text-gray-900">
               Quick Links
@@ -125,7 +124,7 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Contact Info */}
+     
           <div className="space-y-3 xs2:space-y-4 md:-ml-12 ">
             <h3 className="text-base xs2:text-base font-bold text-gray-900">
               Contact Us
