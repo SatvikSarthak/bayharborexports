@@ -2,13 +2,13 @@
 import { useState } from "react";
 
 export default function FloatingContactButton() {
-  const [isFormOpen, setIsFormOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: ""
-  });
+  // const [isFormOpen, setIsFormOpen] = useState(false);
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  //   phone: "",
+  //   message: ""
+  // });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
@@ -20,45 +20,45 @@ export default function FloatingContactButton() {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
     
-    try {
-      // Here you can add your API call to save the data
-      console.log("Contact Form Data:", formData);
+  //   try {
+  //     // Here you can add your API call to save the data
+  //     console.log("Contact Form Data:", formData);
       
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
       
-      setSubmitStatus("success");
+  //     await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // Reset form after successful submission
-      setTimeout(() => {
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          message: ""
-        });
-        setSubmitStatus(null);
-        setIsFormOpen(false);
-      }, 2000);
+  //     setSubmitStatus("success");
       
-    } catch (error) {
-      console.error("Error submitting contact form:", error);
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+     
+  //     setTimeout(() => {
+  //       setFormData({
+  //         name: "",
+  //         email: "",
+  //         phone: "",
+  //         message: ""
+  //       });
+  //       setSubmitStatus(null);
+  //       setIsFormOpen(false);
+  //     }, 2000);
+      
+  //   } catch (error) {
+  //     console.error("Error submitting contact form:", error);
+  //     setSubmitStatus("error");
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
 
-  const handleCloseForm = () => {
-    setIsFormOpen(false);
-    setSubmitStatus(null);
-  };
+  // const handleCloseForm = () => {
+  //   setIsFormOpen(false);
+  //   setSubmitStatus(null);
+  // };
 
-  const whatsappNumber = "+918707759052"; 
+  const whatsappNumber = "+"; 
   const whatsappMessage = "Hello! I'm interested in your export services."; 
 
   const handleWhatsAppClick = () => {
@@ -68,7 +68,7 @@ export default function FloatingContactButton() {
 
   return (
     <>
-      {/* Floating Buttons Container */}
+    
       <div className="fixed bottom-6 w-[75px] right-3 flex flex-col space-y-3 z-40">
         {/* WhatsApp Button */}
         <button
@@ -89,11 +89,11 @@ export default function FloatingContactButton() {
           </span>
         </button>
 
-        {/* Contact Us Button */}
+      
       
       </div>
 
-      {/* Contact Form Modal */}
+    
      
     </>
   );

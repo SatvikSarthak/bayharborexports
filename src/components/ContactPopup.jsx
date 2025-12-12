@@ -11,9 +11,29 @@ export default function ContactPopup() {
     phone: "",
     country: "",
     message: "",
+    countryCode: "+91",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [errors, setErrors] = useState({});
+
+  const countryCodes = [
+    { code: "+1", country: "US/CA", flag: "🇺🇸" },
+    { code: "+44", country: "UK", flag: "🇬🇧" },
+    { code: "+91", country: "India", flag: "🇮🇳" },
+    { code: "+86", country: "China", flag: "🇨🇳" },
+    { code: "+81", country: "Japan", flag: "🇯🇵" },
+    { code: "+49", country: "Germany", flag: "🇩🇪" },
+    { code: "+33", country: "France", flag: "🇫🇷" },
+    { code: "+61", country: "Australia", flag: "🇦🇺" },
+    { code: "+7", country: "Russia", flag: "🇷🇺" },
+    { code: "+971", country: "UAE", flag: "🇦🇪" },
+    { code: "+966", country: "Saudi", flag: "🇸🇦" },
+    { code: "+65", country: "Singapore", flag: "🇸🇬" },
+    { code: "+82", country: "S. Korea", flag: "🇰🇷" },
+    { code: "+55", country: "Brazil", flag: "🇧🇷" },
+    { code: "+52", country: "Mexico", flag: "🇲🇽" },
+  ];
 
   useEffect(() => {
     // Show popup after 2 seconds when page loads
@@ -25,41 +45,125 @@ export default function ContactPopup() {
   }, []);
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
+    // Clear error for this field when user starts typing
+    if (errors[name]) {
+      setErrors({
+        ...errors,
+        [name]: "",
+      });
+    }
+  };
+
+  const handleCountryCodeChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      countryCode: e.target.value,
+    }));
+  };
+
+  const handlePhoneChange = (e) => {
+    const value = e.target.value.replace(/[^\d]/g, "");
+    setFormData((prevState) => ({
+      ...prevState,
+      phone: value,
+    }));
+    // Clear phone error when user starts typing
+    if (errors.phone) {
+      setErrors({
+        ...errors,
+        phone: "",
+      });
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    // Name validation
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = "Name must be at least 2 characters";
+    }
+
+    // Email validation
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    // Phone validation (optional field, but if provided must be valid)
+    if (formData.phone && formData.phone.length < 6) {
+      newErrors.phone = "Please enter a valid phone number";
+    }
+
+    // Country validation (optional)
+    if (formData.country && formData.country.trim().length < 2) {
+      newErrors.country = "Please enter a valid country name";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    // Validate form
+    if (!validateForm()) {
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      // Prepare data for FormSubmit
+      const fullPhone = formData.phone ? `${formData.countryCode} ${formData.phone}` : "";
+      const payload = {
+        name: formData.name,
+        email: formData.email,
+        phone: fullPhone,
+        country: formData.country,
+        message: formData.message,
+        _captcha: "false",
+        _next: "https://bayharborexports.com/thank-you",
+      };
 
-      if (response.ok) {
-        setSubmitStatus("success");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          country: "",
-          message: "",
-        });
-        setTimeout(() => {
-          setIsOpen(false);
-          setSubmitStatus(null);
-        }, 2000);
-      } else {
-        setSubmitStatus("error");
-      }
+      const response = await fetch(
+        "https://formsubmit.co/ajax/Info@bayharborexports.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      if (!response.ok) throw new Error("Network response was not ok");
+
+      setSubmitStatus("success");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        country: "",
+        message: "",
+        countryCode: "+91",
+      });
+      setErrors({});
+
+      setTimeout(() => {
+        setIsOpen(false);
+        setSubmitStatus(null);
+      }, 2000);
     } catch (error) {
       console.error("Error submitting form:", error);
       setSubmitStatus("error");
@@ -101,7 +205,7 @@ export default function ContactPopup() {
           </p>
         </div>
 
-        {/* Form */}
+        
         <form onSubmit={handleSubmit} className="p-6 xs2:p-8 space-y-4 xs2:space-y-5">
           {/* Name Field (Required) */}
           <div>
@@ -115,9 +219,14 @@ export default function ContactPopup() {
               required
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-3 xs2:px-4 py-2 xs2:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0a4174] focus:border-transparent outline-none transition-all text-sm xs2:text-base"
+              className={`w-full px-3 xs2:px-4 py-2 xs2:py-2.5 border rounded-lg focus:ring-2 focus:ring-[#0a4174] focus:border-transparent outline-none transition-all text-sm xs2:text-base ${
+                errors.name ? "border-red-500" : "border-gray-300"
+              }`}
               placeholder="Your full name"
             />
+            {errors.name && (
+              <p className="mt-1 text-xs text-red-600">{errors.name}</p>
+            )}
           </div>
 
           {/* Email Field (Required) */}
@@ -132,9 +241,14 @@ export default function ContactPopup() {
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-3 xs2:px-4 py-2 xs2:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0a4174] focus:border-transparent outline-none transition-all text-sm xs2:text-base"
+              className={`w-full px-3 xs2:px-4 py-2 xs2:py-2.5 border rounded-lg focus:ring-2 focus:ring-[#0a4174] focus:border-transparent outline-none transition-all text-sm xs2:text-base ${
+                errors.email ? "border-red-500" : "border-gray-300"
+              }`}
               placeholder="your.email@example.com"
             />
+            {errors.email && (
+              <p className="mt-1 text-xs text-red-600">{errors.email}</p>
+            )}
           </div>
 
           {/* Phone Field (Optional) */}
@@ -142,15 +256,33 @@ export default function ContactPopup() {
             <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1.5">
               Phone
             </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full px-3 xs2:px-4 py-2 xs2:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0a4174] focus:border-transparent outline-none transition-all text-sm xs2:text-base"
-              placeholder="+1 (555) 000-0000"
-            />
+            <div className="flex gap-2">
+              <select
+                value={formData.countryCode}
+                onChange={handleCountryCodeChange}
+                className="px-2 xs2:px-3 py-2 xs2:py-2.5 border border-gray-300 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#0a4174] focus:border-transparent transition-all cursor-pointer text-sm xs2:text-base"
+              >
+                {countryCodes.map((item) => (
+                  <option key={item.code} value={item.code}>
+                    {item.flag} {item.code}
+                  </option>
+                ))}
+              </select>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handlePhoneChange}
+                className={`flex-1 px-3 xs2:px-4 py-2 xs2:py-2.5 border rounded-lg focus:ring-2 focus:ring-[#0a4174] focus:border-transparent outline-none transition-all text-sm xs2:text-base ${
+                  errors.phone ? "border-red-500" : "border-gray-300"
+                }`}
+                placeholder="Enter phone number"
+              />
+            </div>
+            {errors.phone && (
+              <p className="mt-1 text-xs text-red-600">{errors.phone}</p>
+            )}
           </div>
 
           {/* Country Field (Optional) */}
@@ -164,9 +296,14 @@ export default function ContactPopup() {
               name="country"
               value={formData.country}
               onChange={handleChange}
-              className="w-full px-3 xs2:px-4 py-2 xs2:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0a4174] focus:border-transparent outline-none transition-all text-sm xs2:text-base"
+              className={`w-full px-3 xs2:px-4 py-2 xs2:py-2.5 border rounded-lg focus:ring-2 focus:ring-[#0a4174] focus:border-transparent outline-none transition-all text-sm xs2:text-base ${
+                errors.country ? "border-red-500" : "border-gray-300"
+              }`}
               placeholder="Your country"
             />
+            {errors.country && (
+              <p className="mt-1 text-xs text-red-600">{errors.country}</p>
+            )}
           </div>
 
           {/* Message Field (Optional) */}
@@ -194,7 +331,9 @@ export default function ContactPopup() {
 
           {submitStatus === "error" && (
             <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
-              Something went wrong. Please try again.
+              {Object.keys(errors).length > 0
+                ? "Please fix the errors above and try again."
+                : "Something went wrong. Please try again."}
             </div>
           )}
 

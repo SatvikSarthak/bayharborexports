@@ -8,8 +8,27 @@ export default function InquiryModal({ isOpen, onClose, productName, quantity })
     phone: "",
     product: productName || "",
     quantity: quantity || "",
-    message: ""
+    message: "",
+    countryCode: "+91",
   });
+
+  const countryCodes = [
+    { code: "+1", country: "US/CA", flag: "🇺🇸" },
+    { code: "+44", country: "UK", flag: "🇬🇧" },
+    { code: "+91", country: "India", flag: "🇮🇳" },
+    { code: "+86", country: "China", flag: "🇨🇳" },
+    { code: "+81", country: "Japan", flag: "🇯🇵" },
+    { code: "+49", country: "Germany", flag: "🇩🇪" },
+    { code: "+33", country: "France", flag: "🇫🇷" },
+    { code: "+61", country: "Australia", flag: "🇦🇺" },
+    { code: "+7", country: "Russia", flag: "🇷🇺" },
+    { code: "+971", country: "UAE", flag: "🇦🇪" },
+    { code: "+966", country: "Saudi", flag: "🇸🇦" },
+    { code: "+65", country: "Singapore", flag: "🇸🇬" },
+    { code: "+82", country: "S. Korea", flag: "🇰🇷" },
+    { code: "+55", country: "Brazil", flag: "🇧🇷" },
+    { code: "+52", country: "Mexico", flag: "🇲🇽" },
+  ];
 
   // Update quantity when it changes from parent
   useEffect(() => {
@@ -30,16 +49,58 @@ export default function InquiryModal({ isOpen, onClose, productName, quantity })
     }));
   };
 
+  const handleCountryCodeChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      countryCode: e.target.value,
+    }));
+  };
+
+  const handlePhoneChange = (e) => {
+    const value = e.target.value.replace(/[^\d]/g, "");
+    setFormData((prevState) => ({
+      ...prevState,
+      phone: value,
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    if (!formData.name || !formData.email || !formData.phone) {
+      setSubmitStatus("error");
+      setIsSubmitting(false);
+      return;
+    }
     
     try {
-      // Here you can add your API call to save the data
-      console.log("Inquiry Data:", formData);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Prepare data for FormSubmit
+      const fullPhone = `${formData.countryCode} ${formData.phone}`;
+      const payload = {
+        name: formData.name,
+        email: formData.email,
+        phone: fullPhone,
+        product: formData.product,
+        quantity: formData.quantity ? `${formData.quantity} kg` : "Not specified",
+        message: formData.message || "No additional message",
+        _captcha: "false",
+        _next: "https://bayharborexports.com/thank-you",
+      };
+
+      const response = await fetch(
+        "https://formsubmit.co/ajax/Info@bayharborexports.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      if (!response.ok) throw new Error("Network response was not ok");
       
       setSubmitStatus("success");
       
@@ -51,7 +112,8 @@ export default function InquiryModal({ isOpen, onClose, productName, quantity })
           phone: "",
           product: productName || "",
           quantity: quantity || "",
-          message: ""
+          message: "",
+          countryCode: "+91",
         });
         setSubmitStatus(null);
         onClose();
@@ -151,15 +213,28 @@ export default function InquiryModal({ isOpen, onClose, productName, quantity })
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Phone Number *
             </label>
-            <input
-              type="tel"
-              name="phone"
-              value={formData.phone}
-              onChange={handleInputChange}
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0a4174] focus:border-transparent"
-              placeholder="Enter your phone number"
-            />
+            <div className="flex gap-2">
+              <select
+                value={formData.countryCode}
+                onChange={handleCountryCodeChange}
+                className="px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#0a4174] focus:border-transparent transition-all cursor-pointer"
+              >
+                {countryCodes.map((item) => (
+                  <option key={item.code} value={item.code}>
+                    {item.flag} {item.code}
+                  </option>
+                ))}
+              </select>
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handlePhoneChange}
+                required
+                className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0a4174] focus:border-transparent"
+                placeholder="Enter phone number"
+              />
+            </div>
           </div>
 
           
@@ -185,7 +260,7 @@ export default function InquiryModal({ isOpen, onClose, productName, quantity })
 
           {submitStatus === "error" && (
             <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-md">
-              Sorry, there was an error submitting your inquiry. Please try again.
+              Please fill in all required fields and try again.
             </div>
           )}
 
